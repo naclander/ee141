@@ -64,11 +64,25 @@
 	\begin{align*}
 		G_1G_2 &= \frac{K_m}{Ls+R} \cdot \frac{\frac{1}{b}}{s(\frac{J}{b}s + 1)} \\
 			   &= \frac{\frac{K_m}{bR}}{s\left(\frac{J}{b}s + 1\right)
-			   \left(\frac{L}{R}s + 1\right)} 
+			   \left(\frac{L}{R}s + 1\right)} \\
+			   &= \frac{1}{\frac{JL}{K_m}s^3 + s^2\left( \frac{RJ}{K_m} + 
+			   \frac{bL}{K_m} \right) + \frac{bR}{K_m}s}
 	\end{align*}
 	The second part of this task asked us to take the unit step response of the 
 	open-loop transfer function we just derived. The project speficifaction 
 	mentioned to use the values from the table below:\\
+	\begin{center}
+    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \hline
+    Parameter & Symbol & Typical Value \\ \hline
+    Inertia of arm and head & $J$ & 1 N $\cdot$ m s$^2$/rad \\ \hline 
+    Friction & $b$ & 20 kg/m/s \\ \hline
+    Field Resistance & $R$ & 1 $\Omega$ \\ \hline
+	Field Inductance & $L$ & 0.001 H \\ \hline
+	Motor Constant & $K_m$ & 1 N $\cdot$ m/A \\
+    \hline
+    \end{tabular}
+	\end{center}
 
 \item[Task 3]
 
