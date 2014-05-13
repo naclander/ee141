@@ -1,6 +1,6 @@
 \documentclass{article}
 \usepackage[cm]{fullpage}
-%\usepackage[pdftex]{graphicx}
+\usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{enumerate}
@@ -57,6 +57,7 @@
 	The first function of our cascaded system was given to us in the project
 	specification. It is the transfer function of the motor coil that relates
 	the input voltage to the output torque, it is shown below: \\
+
 	\begin{align*}
 		G_1(s) = \frac{U(s)}{V(s)} = \frac{K_m}{Ls + R} 
 	\end{align*}
@@ -68,9 +69,11 @@
 			   &= \frac{1}{\frac{JL}{K_m}s^3 + s^2\left( \frac{RJ}{K_m} + 
 			   \frac{bL}{K_m} \right) + \frac{bR}{K_m}s}
 	\end{align*}
+
 	The second part of this task asked us to take the unit step response of the 
 	open-loop transfer function we just derived. The project speficifaction 
 	mentioned to use the values from the table below:\\
+
 	\begin{center}
     \begin{tabular}{ | l | l | l | p{5cm} |}
     \hline
@@ -83,6 +86,23 @@
     \hline
     \end{tabular}
 	\end{center}
+
+	After pluging in our values from the table into our transfer function 
+	equation we get the following:
+
+	\begin{align*}
+		\frac{1}{0.001s^3 + 1.02 s^2 + 20s} 
+	\end{align*}
+
+	And our Octave plot of the impulse response is shown below: \\
+
+	\begin{figure}[h!]
+		\caption{Open-loop transfer function of the cascaded HDD head reader
+		assembly}
+		\centering
+		\includegraphics[width=0.5\textwidth]{fig1.eps}
+	\end{figure}
+
 
 \item[Task 3]
 
