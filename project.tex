@@ -6,6 +6,9 @@
 \usepackage{enumerate}
 \usepackage{float}
 \restylefloat{table}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{fancybox}
 %%\usepackage{tikz}
 %%\usetikzlibrary{arrows,chains,matrix,positioning,scopes,backgrounds}
 \usepackage[USenglish]{isodate}
@@ -101,8 +104,19 @@
 		\frac{1}{0.001s^3 + 1.02 s^2 + 20s} 
 	\end{align*}
 
-	And our Octave plot of the impulse response is shown below: \\
-	
+	And our Octave code and plot of the impulse response is shown below: \\
+
+	%Octave source code as required by project specification. TODO make this centered
+	\lstinputlisting[language=Matlab,
+					 breaklines=true, 
+					 morekeywords={matlab2tikz},
+					 numbers=left,
+					 numberstyle={\tiny \color{black}},
+					 keywordstyle=\color{blue},
+				     showstringspaces=false,
+					 numbersep=9pt,
+					 ]{fig1.m}
+		
 	%TODO Fix Y axis label on plot and box label on upper left corner
 	\begin{figure}[H]
 		\caption{Open-loop transfer function of the cascaded HDD head reader
