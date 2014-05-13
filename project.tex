@@ -4,6 +4,8 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{enumerate}
+\usepackage{float}
+\restylefloat{table}
 %%\usepackage{tikz}
 %%\usetikzlibrary{arrows,chains,matrix,positioning,scopes,backgrounds}
 \usepackage[USenglish]{isodate}
@@ -20,7 +22,7 @@
 \title{Hard Disk Drive (HDD) Read Header Controller Design}
 \date{\today}
 %TODO Add ID Numbers (And Quarter and Year?)
-\author{Nathan Aclander and Troy Sankey}
+\author{Nathan Aclander (903933664) and Troy Sankey (?????????)}
 
 \begin{document}
 
@@ -29,8 +31,8 @@
 
 \section*{Summary of Objectives}
 
-\section*{Task 1: Deriving the Transfer Function}
-	In this task we are to derive the transfer function $G_2(s) = 
+\section*{Project Tasks}
+\subsection*{Task 1: Deriving the Transfer Function} In this task we are to derive the transfer function $G_2(s) =
 	\frac{Y(s)}{U(s)}$ of the head reader position model. This relates the
 	input torque $u(t)$ to the head position $y(t)$. To do this we will use
 	the Laplace Transform as learned in class to get the desired transfer 
@@ -50,7 +52,7 @@
 	techniques learned in class, and are now ready to apply this transfer
 	function in the remaining tasks of this project.
 
-\section*{Calculating the Open-Loop Transfer Function}
+\subsection*{Task 2: Calculating the Open-Loop Transfer Function}
 	In this task we are to calculate the open-loop transfer function of the 
 	cascaded HDD head reader assembly, and additionally obtain the unit step
 	response plot. 
@@ -61,7 +63,9 @@
 	\begin{align*}
 		G_1(s) = \frac{U(s)}{V(s)} = \frac{K_m}{Ls + R} 
 	\end{align*}
-	The cascaded open-loop transfer function is shown below:
+	To calculate the open-loop transfer function we relied on the fact that
+	the cascaded transfer function is $G_1$ and $G_2$ multiplied together, as
+	learned in class. The cascaded open-loop transfer function is shown below:
 	\begin{align*}
 		G_1G_2 &= \frac{K_m}{Ls+R} \cdot \frac{\frac{1}{b}}{s(\frac{J}{b}s + 1)} \\
 			   &= \frac{\frac{K_m}{bR}}{s\left(\frac{J}{b}s + 1\right)
@@ -74,6 +78,7 @@
 	open-loop transfer function we just derived. The project speficifaction 
 	mentioned to use the values from the table below:\\
 
+	\begin{table}[H]
 	\begin{center}
     \begin{tabular}{ | l | l | l | p{5cm} |}
     \hline
@@ -86,6 +91,8 @@
     \hline
     \end{tabular}
 	\end{center}
+	\caption{Model Parameters}
+	\end{table}
 
 	After pluging in our values from the table into our transfer function 
 	equation we get the following:
@@ -95,13 +102,19 @@
 	\end{align*}
 
 	And our Octave plot of the impulse response is shown below: \\
-
-	\begin{figure}[h!]
+	
+	%TODO Fix Y axis label on plot and box label on upper left corner
+	\begin{figure}[H]
 		\caption{Open-loop transfer function of the cascaded HDD head reader
 		assembly}
 		\centering
 		\includegraphics[width=0.5\textwidth]{fig1.eps}
 	\end{figure}
+
+	In conclusion we were able to derive and expression for the open-loop
+	transfer function by cascading the head reader position model and the motor
+	coil transfer function together. We then observed, using Octave, the step
+	response on our new transfer function using the provided model parameters.
 
 \begin{itemize}
 
