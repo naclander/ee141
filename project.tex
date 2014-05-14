@@ -35,122 +35,128 @@
 \section*{Summary of Objectives}
 
 \section*{Project Tasks}
-\subsection*{Task 1: Deriving the Transfer Function} In this task we are to derive the transfer function $G_2(s) =
-	\frac{Y(s)}{U(s)}$ of the head reader position model. This relates the
-	input torque $u(t)$ to the head position $y(t)$. To do this we will use
-	the Laplace Transform as learned in class to get the desired transfer 
-	function. \\
-	We know our initial conditions for $\dot{y}$ and $\ddot{y}$ are $0$ because
-	the HDD head is not in motion.
-	\begin{align*}
-		\dot{y} &= 0 \\
-		\ddot{y} &= 0 \\
-		\mathcal{L}\left\{ J\ddot{y} + b \dot{y}\right\} &= \mathcal{L}\left\{
-		u(t)\right\} \\
-		Js^2 Y(s) + bsY(s) &= U(s) \\
-		G_2 &= \frac{Y(s)}{U(s)} = \frac{\frac{1}{b}}{s(\frac{J}{b}s + 1)}  \\
-	\end{align*}
-	Calculating the Laplace Transform of the torque to position relationship
-	was relatively easy as shown above. We used differential equation solving
-	techniques learned in class, and are now ready to apply this transfer
-	function in the remaining tasks of this project.
+\subsection*{Task 1: Deriving the Transfer Function}
+
+In this task we are to derive the transfer function $G_2(s) =
+\frac{Y(s)}{U(s)}$ of the head reader position model. This relates the
+input torque $u(t)$ to the head position $y(t)$. To do this we will
+use the Laplace Transform as learned in class to get the desired
+transfer function.
+
+We know our initial conditions for $\dot{y}$ and $\ddot{y}$ are $0$
+because the HDD head is not in motion.
+
+\begin{align*}
+  \dot{y} &= 0 \\
+  \ddot{y} &= 0 \\
+  \mathcal{L}\left\{ J\ddot{y} + b \dot{y}\right\} &= \mathcal{L}\left\{u(t)\right\} \\
+  Js^2 Y(s) + bsY(s) &= U(s) \\
+  G_2 &= \frac{Y(s)}{U(s)} = \frac{\frac{1}{b}}{s(\frac{J}{b}s + 1)} \\
+\end{align*}
+
+Calculating the Laplace Transform of the torque to position
+relationship was relatively easy as shown above. We used differential
+equation solving techniques learned in class, and are now ready to
+apply this transfer function in the remaining tasks of this project.
 
 \subsection*{Task 2: Calculating the Open-Loop Transfer Function}
-	In this task we are to calculate the open-loop transfer function of the 
-	cascaded HDD head reader assembly, and additionally obtain the unit step
-	response plot. 
-	The first function of our cascaded system was given to us in the project
-	specification. It is the transfer function of the motor coil that relates
-	the input voltage to the output torque, it is shown below: \\
 
-	\begin{align*}
-		G_1(s) = \frac{U(s)}{V(s)} = \frac{K_m}{Ls + R} 
-	\end{align*}
-	To calculate the open-loop transfer function we relied on the fact that
-	the cascaded transfer function is $G_1$ and $G_2$ multiplied together, as
-	learned in class. The cascaded open-loop transfer function is shown below:
-	\begin{align*}
-		G_1G_2 &= \frac{K_m}{Ls+R} \cdot \frac{\frac{1}{b}}{s(\frac{J}{b}s + 1)} \\
-			   &= \frac{\frac{K_m}{bR}}{s\left(\frac{J}{b}s + 1\right)
-			   \left(\frac{L}{R}s + 1\right)} \\
-			   &= \frac{1}{\frac{JL}{K_m}s^3 + s^2\left( \frac{RJ}{K_m} + 
-			   \frac{bL}{K_m} \right) + \frac{bR}{K_m}s}
-	\end{align*}
+In this task we are to calculate the open-loop transfer function of
+the cascaded HDD head reader assembly, and additionally obtain the
+unit step response plot. The first function of our cascaded system was
+given to us in the project specification. It is the transfer function
+of the motor coil that relates the input voltage to the output torque,
+it is shown below:
 
-	The second part of this task asked us to take the unit step response of the 
-	open-loop transfer function we just derived. The project speficifaction 
-	mentioned to use the values from the table below:\\
+$$G_1(s) = \frac{U(s)}{V(s)} = \frac{K_m}{Ls + R}$$
 
-	\begin{table}[H]
-	\begin{center}
+To calculate the open-loop transfer function we relied on the fact
+that the cascaded transfer function is $G_1$ and $G_2$ multiplied
+together, as learned in class. The cascaded open-loop transfer
+function is shown below:
+
+\begin{align*}
+  G_1G_2 &= \frac{K_m}{Ls+R} \cdot \frac{\frac{1}{b}}{s(\frac{J}{b}s + 1)} \\
+         &= \frac{\frac{K_m}{bR}}{s\left(\frac{J}{b}s + 1\right)  \left(\frac{L}{R}s + 1\right)} \\
+         &= \frac{1}{\frac{JL}{K_m}s^3 + s^2\left( \frac{RJ}{K_m} + \frac{bL}{K_m} \right) + \frac{bR}{K_m}s}
+\end{align*}
+
+The second part of this task asked us to take the unit step response
+of the open-loop transfer function we just derived. The project
+specification mentioned to use the values from the table below:
+
+\begin{table}[H]
+  \begin{center}
     \begin{tabular}{ | l | l | l | p{5cm} |}
     \hline
     Parameter & Symbol & Typical Value \\ \hline
     Inertia of arm and head & $J$ & 1 N $\cdot$ m s$^2$/rad \\ \hline 
     Friction & $b$ & 20 kg/m/s \\ \hline
     Field Resistance & $R$ & 1 $\Omega$ \\ \hline
-	Field Inductance & $L$ & 0.001 H \\ \hline
-	Motor Constant & $K_m$ & 1 N $\cdot$ m/A \\
-    \hline
-    \end{tabular}
-	\end{center}
-	\caption{Model Parameters}
-	\end{table}
+    Field Inductance & $L$ & 0.001 H \\ \hline
+    Motor Constant & $K_m$ & 1 N $\cdot$ m/A \\ \hline
+   \end{tabular}
+ \end{center}
+ \caption{Model Parameters}
+\end{table}
 
-	After pluging in our values from the table into our transfer function 
-	equation we get the following:
+After pluging in our values from the table into our transfer function
+equation we get the following:
 
-	\begin{align*}
-		\frac{1}{0.001s^3 + 1.02 s^2 + 20s} 
-	\end{align*}
+$$\frac{1}{0.001s^3 + 1.02 s^2 + 20s}$$
 
-	And our Octave code and plot of the impulse response is shown below: \\
+And our Octave code and plot of the impulse response is shown below:
 
-	%Octave source code as required by project specification. TODO make this centered
-	\lstinputlisting[language=Matlab,
-					 breaklines=true, 
-					 morekeywords={matlab2tikz},
-					 numbers=left,
-					 numberstyle={\tiny \color{black}},
-					 keywordstyle=\color{blue},
-				     showstringspaces=false,
-					 numbersep=9pt,
-					 ]{fig1.m}
-		
-	%TODO Fix Y axis label on plot and box label on upper left corner
-	\begin{figure}[H]
-		\caption{Open-loop transfer function of the cascaded HDD head reader
-		assembly}
-		\centering
-		\includegraphics[width=0.5\textwidth]{fig1.eps}
-	\end{figure}
+%Octave source code as required by project specification. TODO make this centered
+%\hspace{5em}
+%\begin{minipage}
+\lstinputlisting[language=Matlab,
+                 breaklines=true,
+                 morekeywords={matlab2tikz},
+                 numbers=left,
+                 numberstyle={\tiny \color{black}},
+                 keywordstyle=\color{blue},
+                 showstringspaces=false,
+                 numbersep=9pt,
+                 xleftmargin=3em
+                ]{fig1.m}
+%\end{minipage}
 
-	In conclusion we were able to derive and expression for the open-loop
-	transfer function by cascading the head reader position model and the motor
-	coil transfer function together. We then observed, using Octave, the step
-	response on our new transfer function using the provided model parameters.
+%TODO Fix Y axis label on plot and box label on upper left corner
+\begin{figure}[H]
+  \caption{Open-loop transfer function of the cascaded HDD head reader
+    assembly}
+  \centering
+  \includegraphics[width=0.5\textwidth]{fig1.eps}
+\end{figure}
 
-\begin{itemize}
+In conclusion we were able to derive and expression for the open-loop
+transfer function by cascading the head reader position model and the
+motor coil transfer function together. We then observed, using Octave,
+the step response on our new transfer function using the provided
+model parameters.
 
-\item[Task 3]
-
-  \begin{enumerate}[A]
-  \item
-  \item
-  \item
-  \end{enumerate}
-
-\item[Task 4]
-\item[Task 5]
-\item[Task 6]
-
-  \begin{enumerate}[A]
-  \item
-  \item
-  \item
-  \item
-  \end{enumerate}
-
-\end{itemize}
+%% \begin{itemize}
+%% 
+%% \item[Task 3]
+%% 
+%%   \begin{enumerate}[A]
+%%   \item
+%%   \item
+%%   \item
+%%   \end{enumerate}
+%% 
+%% \item[Task 4]
+%% \item[Task 5]
+%% \item[Task 6]
+%% 
+%%   \begin{enumerate}[A]
+%%   \item
+%%   \item
+%%   \item
+%%   \item
+%%   \end{enumerate}
+%% 
+%% \end{itemize}
 
 \end{document}
