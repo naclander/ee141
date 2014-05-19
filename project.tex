@@ -98,6 +98,7 @@ specification mentioned to use the values from the table below:
    \end{tabular}
  \end{center}
  \caption{Model Parameters}
+ \label{table:param}
 \end{table}
 
 After pluging in our values from the table into our transfer function
@@ -107,7 +108,7 @@ $$\frac{1}{0.001s^3 + 1.02 s^2 + 20s}$$
 
 And our Octave code and plot of the impulse response is shown below:
 
-%Octave source code as required by project specification. TODO make this centered
+%Octave source code as required by project specification.
 %\hspace{5em}
 %\begin{minipage}
 \lstinputlisting[language=Matlab,
@@ -135,6 +136,83 @@ transfer function by cascading the head reader position model and the
 motor coil transfer function together. We then observed, using Octave,
 the step response on our new transfer function using the provided
 model parameters.
+
+\subsection*{Task 3: Proportional Compensator}
+
+\subsubsection*{Task 3: Responses: Unit Step Refrence Input}
+
+This task required us to find the step response of the closed-loop system to
+the unit step refrence input, while assuming zero disturbance. To complete the
+closed loop we were given the sensor's transfer function $H(s) = 1$ and the
+candidate controller $F(s) = K_a$. This task relies on our understanding on
+block diagrams as explained in class, as well as application of compensator
+design given transient response performance specifications.
+
+%TODO Maybe show block diagram?
+
+Our closed-loop is represented as: 
+
+	$$ HDD(s) = \frac{F(s)G_1(s)G_2(s)}{1 + F(s)G_1(s)G_2(s)} $$
+
+Where $G_1(s)G_2(s)$ is the transfer function from part 2. Using the two 
+specified values for $K_a$ we get the following transfer function when using
+values from Table 1.
+
+\begin{table}[H]
+\begin{center}
+  \begin{tabular}{ | l | l | l | p{5cm} |}
+  \hline
+  $K_a$ & $HDD(s)$  \\ \hline
+  50 & $\frac{0.05s^3 + 41s^2 + 1000s}{0.00204s^5 1.08s^4 + 40.85 s^3 
+  + 451 s^2  + 1000s}$\\ \hline 
+  400 & $\frac{0.4s^3 + 408s^2 + 8000s}{0.00204s^5 + 1.08s^4 + 41.2 s^3
+  + 808 s^2 + 8000 s}$  \\ \hline
+ \end{tabular}
+\end{center}
+\caption{Closed-Loop System: Unit Step Refrence Input}
+\label{table:param}
+\end{table}
+
+Using Octave, we observed the response to the unit step refrence input. The
+Octave code and plots are shown below. 
+
+\lstinputlisting[language=Matlab,
+                 breaklines=true,
+                 morekeywords={matlab2tikz},
+                 numbers=left,
+                 numberstyle={\tiny \color{black}},
+                 keywordstyle=\color{blue},
+                 showstringspaces=false,
+                 numbersep=9pt,
+                 xleftmargin=3em
+                ]{fig2.m}
+%\end{minipage}
+
+%TODO Fix Y axis label on plot and box label on upper left corner
+\begin{figure}[H]
+  \caption{Step response for the closed loop system: $K_a = 50$}
+  \centering
+  \includegraphics[width=0.5\textwidth]{fig2.eps}
+\end{figure}
+
+\lstinputlisting[language=Matlab,
+                 breaklines=true,
+                 morekeywords={matlab2tikz},
+                 numbers=left,
+                 numberstyle={\tiny \color{black}},
+                 keywordstyle=\color{blue},
+                 showstringspaces=false,
+                 numbersep=9pt,
+                 xleftmargin=3em
+                ]{fig3.m}
+%\end{minipage}
+
+%TODO Fix Y axis label on plot and box label on upper left corner
+\begin{figure}[H]
+  \caption{Step response for the closed loop system: $K_a = 400$}
+  \centering
+  \includegraphics[width=0.5\textwidth]{fig3.eps}
+\end{figure}
 
 %% \begin{itemize}
 %% 
