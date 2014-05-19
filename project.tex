@@ -137,14 +137,14 @@ model parameters.
 
 \subsection*{Task 3: Proportional Compensator}
 
-\subsubsection*{Task 3: Responses: Unit Step Refrence Input}
-
 This task required us to find the step response of the closed-loop system to
 the unit step refrence input, while assuming zero disturbance. To complete the
 closed loop we were given the sensor's transfer function $H(s) = 1$ and the
 candidate controller $F(s) = K_a$. This task relies on our understanding on
 block diagrams as explained in class, as well as application of compensator
 design given transient response performance specifications.
+
+\subsubsection*{Task 3A: Responses: Unit Step Refrence Input}
 
 %TODO Maybe show block diagram?
 
@@ -168,7 +168,7 @@ values from Table 1.
  \end{tabular}
 \end{center}
 \caption{Closed-Loop System: Unit Step Refrence Input}
-\label{table:param}
+\label{table:2}
 \end{table}
 
 Using Octave, we observed the response to the unit step refrence input. The
@@ -208,6 +208,68 @@ Octave code and plots are shown below.
   \caption{Step response for the closed loop system: $K_a = 400$}
   \centering
   \includegraphics[width=0.5\textwidth]{fig3.eps}
+\end{figure}
+
+\subsubsection*{Task 3B: Responses: Unit Step Disturbance}
+
+%TODO Maybe show block diagram?
+
+Our closed-loop is represented as: 
+
+$$ HDD(s) = \frac{G_1(s)}{1 + G_1(s)H(s)F(s)G_2(s)} $$ 
+
+Again, using the specifications for part 2 we get:
+
+\begin{table}[H]
+\begin{center}
+  \begin{tabular}{ | l | l | l | p{5cm} |}
+  \hline
+  $K_a$ & $HDD(s)$  \\ \hline
+  50 & $\frac{0.051s^2 + s}{0.0001s^3 + 0.52s^2 + 1.002s + 2.5}$\\ \hline 
+  400 & $\frac{0.051s^2 + s}{0.0001s^3 + 0.052s^2 + 1.02s + 20}$  \\ \hline
+ \end{tabular}
+\end{center}
+\caption{Closed-Loop System: Unit Step Disturbance}
+\label{table:3}
+\end{table}
+
+Using Octave, we observed the response to the unit step refrence input. The
+Octave code and plots are shown below. 
+
+\lstinputlisting[language=Matlab,
+                 breaklines=true,
+                 morekeywords={matlab2tikz},
+                 numbers=left,
+                 numberstyle={\tiny \color{black}},
+                 keywordstyle=\color{blue},
+                 showstringspaces=false,
+                 numbersep=9pt,
+                 xleftmargin=3em
+                ]{fig4.m}
+%\end{minipage}
+
+\begin{figure}[H]
+  \caption{Step response for the closed loop system: $K_a = 50$}
+  \centering
+  \includegraphics[width=0.5\textwidth]{fig4.eps}
+\end{figure}
+
+\lstinputlisting[language=Matlab,
+                 breaklines=true,
+                 morekeywords={matlab2tikz},
+                 numbers=left,
+                 numberstyle={\tiny \color{black}},
+                 keywordstyle=\color{blue},
+                 showstringspaces=false,
+                 numbersep=9pt,
+                 xleftmargin=3em
+                ]{fig5.m}
+%\end{minipage}
+
+\begin{figure}[H]
+  \caption{Step response for the closed loop system: $K_a = 400$}
+  \centering
+  \includegraphics[width=0.5\textwidth]{fig5.eps}
 \end{figure}
 
 %% \begin{itemize}
