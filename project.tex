@@ -24,7 +24,6 @@
 
 \title{Hard Disk Drive (HDD) Read Header Controller Design}
 \date{\today}
-%TODO Add ID Numbers (And Quarter and Year?)
 \author{Nathan Aclander (903933664) and Troy Sankey (403942345)}
 
 \begin{document}
@@ -123,7 +122,6 @@ And our Octave code and plot of the impulse response is shown below:
                 ]{fig1.m}
 %\end{minipage}
 
-%TODO Fix Y axis label on plot and box label on upper left corner
 \begin{figure}[H]
   \caption{Open-loop transfer function of the cascaded HDD head reader
     assembly}
@@ -152,7 +150,7 @@ design given transient response performance specifications.
 
 Our closed-loop is represented as: 
 
-	$$ HDD(s) = \frac{F(s)G_1(s)G_2(s)}{1 + F(s)G_1(s)G_2(s)} $$
+$$HDD(s) = \frac{F(s)G_1(s)G_2(s)}{1 + F(s)G_1(s)G_2(s)}$$
 
 Where $G_1(s)G_2(s)$ is the transfer function from part 2. Using the two 
 specified values for $K_a$ we get the following transfer function when using
@@ -188,7 +186,6 @@ Octave code and plots are shown below.
                 ]{fig2.m}
 %\end{minipage}
 
-%TODO Fix Y axis label on plot and box label on upper left corner
 \begin{figure}[H]
   \caption{Step response for the closed loop system: $K_a = 50$}
   \centering
@@ -207,7 +204,6 @@ Octave code and plots are shown below.
                 ]{fig3.m}
 %\end{minipage}
 
-%TODO Fix Y axis label on plot and box label on upper left corner
 \begin{figure}[H]
   \caption{Step response for the closed loop system: $K_a = 400$}
   \centering
