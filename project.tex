@@ -216,7 +216,7 @@ Octave code and plots are shown below.
 
 Our closed-loop is represented as: 
 
-$$ HDD(s) = \frac{G_1(s)}{1 + G_1(s)H(s)F(s)G_2(s)} $$ 
+$$ HDD(s) = \frac{G_2(s)}{1 + G_1(s)H(s)F(s)G_2(s)} $$ 
 
 Again, using the specifications for part 2 we get:
 
@@ -225,8 +225,8 @@ Again, using the specifications for part 2 we get:
   \begin{tabular}{ | l | l | l | p{5cm} |}
   \hline
   $K_a$ & $HDD(s)$  \\ \hline
-  50 & $\frac{0.051s^2 + s}{0.0001s^3 + 0.52s^2 + 1.002s + 2.5}$\\ \hline 
-  400 & $\frac{0.051s^2 + s}{0.0001s^3 + 0.052s^2 + 1.02s + 20}$  \\ \hline
+  50 & $\frac{0.00255s^2 + 0.05s}{0.0026s^4 + 0.101s^3 + 1.125s^2 + 2.5s}$\\ \hline 
+  400 & $\frac{0.00255s^2 + 0.05s}{0.0026s^4 + 0.101s^3 + 2s^2 + 20s}$\\ \hline 
  \end{tabular}
 \end{center}
 \caption{Closed-Loop System: Unit Step Disturbance}
@@ -271,6 +271,56 @@ Octave code and plots are shown below.
   \centering
   \includegraphics[width=0.5\textwidth]{fig5.eps}
 \end{figure}
+
+\subsubsection*{Task 3C: Satisfying the Performance Specifications}
+
+For this subtask, a value for $K_a$ was needed to meet performance 
+specifications of the system. The specifications are shown inthe table below.
+
+\begin{table}[H]
+\begin{center}
+  \begin{tabular}{ | l | l | l | p{5cm} |}
+  \hline
+  Percent Measure & Specification\\ \hline 
+  Percent overshoot & Less than $5\%$ \\ \hline 
+  Settling time ($2\%$ deviation) & Less than 250 ms \\ \hline 
+  Maximum Value of response to a unit step disturbance & Less than 
+  $5\cdot10^{-3}$ \\ \hline 
+  Percent overshoot & Less than $5\%$ \\ \hline 
+ \end{tabular}
+\end{center}
+\caption{Transient Response Performance Specifications}
+\label{table:3}
+\end{table}
+
+After observing the response of the system for varying values of $K_a$ we
+concluded that it was not possible to meet all aspects of the specifications
+from the proportional compensator. 
+
+The shortest settling time we could get was approximatley 0.37 seconds, for
+$K_a = 1450$. We noticed a parabolic relationship between $K_a$ and the
+settling time. Values smaller, and larger than $K_a = 1450$ gave longer
+settling times. Settling time seemed to be the smallest at approximatley
+$K_a = 1450$.
+
+To meet the appropriate overshoot, we set $K_a$ to 200, which
+indeed did place the system within the correct specification margins for
+overshoot, but placed it outside the bound of the maximum value of the response
+ to a unit step disturbance. Increasing $K_a$ higher brought the system
+closer to meeting the specification for the maximum bound, but further away from
+meeting the overshoot specification. $K_a = 220$ for example, gave a maximum
+value just under the required $5\cdot10^{-3}$.
+
+%TODO show graphs that help explain?
+
+In conclusion, this task required building a complete mathematical model for
+the HDD Read Head system, and then using this model to meet required
+specifications. This task also showed, however, that adding a compensator will
+not neccessarilly change the system to meet all specifications. In part C of
+this task, we saw that when adding a compensator we were able to meet certain
+specification requirements, but never all of them. This task made an important
+observation in showing not all compensators are the same, as tasks later on
+will show.
 
 %% \begin{itemize}
 %% 
