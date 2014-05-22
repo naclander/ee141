@@ -19,12 +19,13 @@
 \headsep 10pt
 \rhead{\today}
 \chead{EE 141 Project}
-\lhead{Nathan Aclander and Troy Sankey}
+\lhead{Nathan Aclander, Troy Sankey, and Sakib Shaikh}
 \cfoot{\thepage}
 
 \title{Hard Disk Drive (HDD) Read Header Controller Design}
 \date{\today}
-\author{Nathan Aclander (903933664) and Troy Sankey (403942345)}
+\author{Nathan Aclander (903933664), Troy Sankey (403942345), 
+and Sakib Shaikh (?????????)}
 
 \begin{document}
 
@@ -287,7 +288,6 @@ specifications of the system. The specifications are shown inthe table below.
   Settling time ($2\%$ deviation) & Less than 250 ms \\ \hline 
   Maximum Value of response to a unit step disturbance & Less than 
   $5\cdot10^{-3}$ \\ \hline 
-  Percent overshoot & Less than $5\%$ \\ \hline 
  \end{tabular}
 \end{center}
 \caption{Transient Response Performance Specifications}
@@ -322,6 +322,54 @@ this task, we saw that when adding a compensator we were able to meet certain
 specification requirements, but never all of them. This task made an important
 observation in showing not all compensators are the same, as tasks later on
 will show.
+
+\subsection*{Task 4: Positional and Velocity Sensor}
+
+In this task an alternative output sensor was considered, that measures the
+position as well as the velocity of the head reader. Its represented by $H(s)
+= 1 + K_1s$. This task, like Task 3C, relied in our understanding from class of
+manipulating transfer functions with compensators. Unlike Task 3C, we now have
+control over both poles and zeroes. Our system transfer function is now the 
+same as in task 3A, but with a different value for $H(s)$:
+
+$$HDD(s) = \frac{F(s)G_1(s)G_2(s)}{1 + F(s)G_1(s)G_2(s)H(s)}$$
+
+The system now has two different K values that can be changed in order to meet
+the specifications from Table 4. After trying different K values we found that
+$K_a = 370$ and $K_1 = 0.04$ enabled the system to satisfy all requirements.
+A value of $K_1 = 0.04$ gave our system a zero at $-25$.
+
+Using these values, the system shows the following values in its response:
+
+\begin{table}[H]
+\begin{center}
+  \begin{tabular}{ | l | l | l | p{5cm} |}
+  \hline
+  Percent Measure & Specification\\ \hline 
+  Percent overshoot & 0.134\% \\ \hline 
+  Settling time ($2\%$ deviation) & 243ms \\ \hline 
+  Maximum Value of response to a unit step disturbance & $3\cdot10^{-3}$\\ \hline 
+ \end{tabular}
+\end{center}
+\caption{Response Performance from Positional Velocity Sensor}
+\label{table:3}
+\end{table}
+
+All above values were within the specifications of the system, and all were
+achieved with the same K values, inlike the system in Task 3.
+
+%TODO show graphs that help explain?
+
+In conclusion, it was also found that for this system, having a zero less than
+-20 enabled the creation of a system that was able to meet the specifications.
+This was because a zero at that particular location caused the poles of the
+system to break out towards the left, and into the desired regioun (as set by
+the specifications).
+
+This task showed how having control of both zeros and poles of the system gave
+the engineer of the system (us) more control. Without the ability to add a
+zero to the system and changing its position, the system would not have been
+able to meet the specifications, as was the case in Task 3C.
 
 %% \begin{itemize}
 %% 
