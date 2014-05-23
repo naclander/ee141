@@ -9,8 +9,10 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage{fancybox}
-%%\usepackage{tikz}
-%%\usetikzlibrary{arrows,chains,matrix,positioning,scopes,backgrounds}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{subfigure}
+\usepackage{subfig}
 \usepackage[USenglish]{isodate}
 \isodate
 \usepackage{fancyhdr}
@@ -100,7 +102,6 @@ specification mentioned to use the values from the table below:
    \end{tabular}
  \end{center}
  \caption{Model Parameters}
- \label{table:param}
 \end{table}
 
 After pluging in our values from the table into our transfer function
@@ -171,7 +172,6 @@ values from Table 1.
  \end{tabular}
 \end{center}
 \caption{Closed-Loop System: Unit Step Refrence Input}
-\label{table:2}
 \end{table}
 
 Using Octave, we observed the response to the unit step refrence input. The
@@ -233,7 +233,6 @@ Again, using the specifications for part 2 we get:
  \end{tabular}
 \end{center}
 \caption{Closed-Loop System: Unit Step Disturbance}
-\label{table:3}
 \end{table}
 
 Using Octave, we observed the response to the unit step refrence input. The
@@ -292,7 +291,6 @@ specifications of the system. The specifications are shown inthe table below.
  \end{tabular}
 \end{center}
 \caption{Transient Response Performance Specifications}
-\label{table:3}
 \end{table}
 
 After observing the response of the system for varying values of $K_a$ we
@@ -315,7 +313,6 @@ $K_a = 1450$.
                  numbersep=9pt,
                  xleftmargin=3em
                 ]{fig6.m}
-%\end{minipage}
 
 \begin{figure}[H]
   \caption{Shortest Settling Time Acheivable From Compensator: 
@@ -332,7 +329,37 @@ closer to meeting the specification for the maximum bound, but further away from
 meeting the overshoot specification. $K_a = 220$ for example, gave a maximum
 value just under the required $5\cdot10^{-3}$.
 
-%TODO show graphs that help explain?
+The following graphs show how alternating between $K_a$ being 200 or 220 pushes
+the response of the unit step disturbance over the boundary of its accepted 
+maximum response.
+
+%TODO put these side by side?
+
+\lstinputlisting[language=Matlab,
+                 breaklines=true,
+                 morekeywords={matlab2tikz},
+                 numbers=left,
+                 numberstyle={\tiny \color{black}},
+                 keywordstyle=\color{blue},
+                 showstringspaces=false,
+                 numbersep=9pt,
+                 xleftmargin=3em
+                ]{fig7.m}
+
+\lstinputlisting[language=Matlab,
+                 breaklines=true,
+                 morekeywords={matlab2tikz},
+                 numbers=left,
+                 numberstyle={\tiny \color{black}},
+                 keywordstyle=\color{blue},
+                 showstringspaces=false,
+                 numbersep=9pt,
+                 xleftmargin=3em
+                ]{fig8.m}
+
+%TODO put graphs in 1 figure, using subfigures
+
+%TODO maybe add a root locus plot
 
 In conclusion, this task required building a complete mathematical model for
 the HDD Read Head system, and then using this model to meet required
@@ -372,7 +399,6 @@ Using these values, the system shows the following values in its response:
  \end{tabular}
 \end{center}
 \caption{Response Performance from Positional Velocity Sensor}
-\label{table:3}
 \end{table}
 
 All above values were within the specifications of the system, and all were
@@ -425,7 +451,6 @@ required to be 1.
    \end{tabular}
  \end{center}
  \caption{Response Performance from PID Compensator}
- \label{table:param}
 \end{table}
 
 %TODO show graphs that help explain?
