@@ -85,12 +85,11 @@ The second part of this task asked us to take the unit step response
 of the open-loop transfer function we just derived. The project
 specification mentioned to use the values from the table below:
 
-%TODO maybe make the first row Bold?%
 \begin{table}[H]
   \begin{center}
     \begin{tabular}{ | l | l | l | p{5cm} |}
     \hline
-    Parameter & Symbol & Typical Value \\ \hline
+    \textbf{Parameter} & \textbf{Symbol} & \textbf{Typical Value} \\ \hline
     Inertia of arm and head & $J$ & 1 N $\cdot$ m s$^2$/rad \\ \hline 
     Friction & $b$ & 20 kg/m/s \\ \hline
     Field Resistance & $R$ & 1 $\Omega$ \\ \hline
@@ -162,7 +161,7 @@ values from Table 1.
 \begin{center}
   \begin{tabular}{ | l | l | l | p{5cm} |}
   \hline
-  $K_a$ & $HDD(s)$  \\ \hline
+  \textbf{$K_a$} & \textbf{$HDD(s)$}  \\ \hline
   50 & $\frac{0.05s^3 + 41s^2 + 1000s}{0.00204s^5 1.08s^4 + 40.85 s^3 
   + 451 s^2  + 1000s}$\\ \hline 
   400 & $\frac{0.4s^3 + 408s^2 + 8000s}{0.00204s^5 + 1.08s^4 + 41.2 s^3
@@ -226,7 +225,7 @@ Again, using the specifications for part 2 we get:
 \begin{center}
   \begin{tabular}{ | l | l | l | p{5cm} |}
   \hline
-  $K_a$ & $HDD(s)$  \\ \hline
+  \textbf{$K_a$} & \textbf{$HDD(s)$}  \\ \hline
   50 & $\frac{0.00255s^2 + 0.05s}{0.0026s^4 + 0.101s^3 + 1.125s^2 + 2.5s}$\\ \hline 
   400 & $\frac{0.00255s^2 + 0.05s}{0.0026s^4 + 0.101s^3 + 2s^2 + 20s}$\\ \hline 
  \end{tabular}
@@ -283,7 +282,7 @@ specifications of the system. The specifications are shown inthe table below.
 \begin{center}
   \begin{tabular}{ | l | l | l | p{5cm} |}
   \hline
-  Percent Measure & Specification\\ \hline 
+  \textbf{Performance Measure} & \textbf{Specification}\\ \hline 
   Percent overshoot & Less than $5\%$ \\ \hline 
   Settling time ($2\%$ deviation) & Less than 250 ms \\ \hline 
   Maximum Value of response to a unit step disturbance & Less than 
@@ -345,7 +344,7 @@ Using these values, the system shows the following values in its response:
 \begin{center}
   \begin{tabular}{ | l | l | l | p{5cm} |}
   \hline
-  Percent Measure & Specification\\ \hline 
+  \textbf{Performance Measure} & \textbf{Specification}\\ \hline 
   Percent overshoot & 0.134\% \\ \hline 
   Settling time ($2\%$ deviation) & 243ms \\ \hline 
   Maximum Value of response to a unit step disturbance & $3\cdot10^{-3}$\\ \hline 
@@ -370,6 +369,22 @@ This task showed how having control of both zeros and poles of the system gave
 the engineer of the system (us) more control. Without the ability to add a
 zero to the system and changing its position, the system would not have been
 able to meet the specifications, as was the case in Task 3C.
+
+\subsection*{Task 5: The PID Compensator}
+
+In this task we used the PID Compensator architectire. The sensor reverted back
+to $H(s) = 1$, while the controller now assumes a transfer function of the form
+
+$$ F(s) = K_1 + \frac{K_2}{s}  + K_3s $$
+
+where $K_2 = 0$ because the plant (arm) inherently has an integrating term. The
+project description furthermore states that $\frac{K_1}{k_2} = 1$.
+
+As in the previous Tasks, our system transfer function is still of the form:
+
+$$HDD(s) = \frac{F(s)G_1(s)G_2(s)}{1 + F(s)G_1(s)G_2(s)H(s)}$$
+
+%TODO show graphs that help explain?
 
 %% \begin{itemize}
 %% 
