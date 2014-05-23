@@ -77,8 +77,10 @@ function is shown below:
 
 \begin{align*}
   G_1G_2 &= \frac{K_m}{Ls+R} \cdot \frac{\frac{1}{b}}{s(\frac{J}{b}s + 1)} \\
-         &= \frac{\frac{K_m}{bR}}{s\left(\frac{J}{b}s + 1\right)  \left(\frac{L}{R}s + 1\right)} \\
-         &= \frac{1}{\frac{JL}{K_m}s^3 + s^2\left( \frac{RJ}{K_m} + \frac{bL}{K_m} \right) + \frac{bR}{K_m}s}
+         &= \frac{\frac{K_m}{bR}}{s\left(\frac{J}{b}s + 1\right)  
+		 \left(\frac{L}{R}s + 1\right)} \\
+         &= \frac{1}{\frac{JL}{K_m}s^3 + s^2\left( \frac{RJ}{K_m} + 
+		 \frac{bL}{K_m} \right) + \frac{bR}{K_m}s}
 \end{align*}
 
 The second part of this task asked us to take the unit step response
@@ -303,6 +305,25 @@ settling time. Values smaller, and larger than $K_a = 1450$ gave longer
 settling times. Settling time seemed to be the smallest at approximatley
 $K_a = 1450$.
 
+\lstinputlisting[language=Matlab,
+                 breaklines=true,
+                 morekeywords={matlab2tikz},
+                 numbers=left,
+                 numberstyle={\tiny \color{black}},
+                 keywordstyle=\color{blue},
+                 showstringspaces=false,
+                 numbersep=9pt,
+                 xleftmargin=3em
+                ]{fig6.m}
+%\end{minipage}
+
+\begin{figure}[H]
+  \caption{Shortest Settling Time Acheivable From Compensator: 
+  $K_a \approx 1450$, Settling Time $\approx 370$ ms}
+  \centering
+  \includegraphics[width=0.5\textwidth]{fig6.eps}
+\end{figure}
+
 To meet the appropriate overshoot, we set $K_a$ to 200, which
 indeed did place the system within the correct specification margins for
 overshoot, but placed it outside the bound of the maximum value of the response
@@ -384,29 +405,29 @@ As in the previous Tasks, our system transfer function is still of the form:
 
 $$HDD(s) = \frac{F(s)G_1(s)G_2(s)}{1 + F(s)G_1(s)G_2(s)H(s)}$$
 
-%TODO show graphs that help explain?
+Using the PID Compensator the system was not able to acheive a settling time
+of less than 250 ms, as described in the spec. However, other design
+specifications were able to be met. The following table the \% overshoot,
+response time, and response to disturbance for varying levels of K. Note that
+in this compensator both $K_1$ and $K_3$ were the same, as their ratio was
+required to be 1.
 
-%% \begin{itemize}
-%% 
-%% \item[Task 3]
-%% 
-%%   \begin{enumerate}[A]
-%%   \item
-%%   \item
-%%   \item
-%%   \end{enumerate}
-%% 
-%% \item[Task 4]
-%% \item[Task 5]
-%% \item[Task 6]
-%% 
-%%   \begin{enumerate}[A]
-%%   \item
-%%   \item
-%%   \item
-%%   \item
-%%   \end{enumerate}
-%% 
-%% \end{itemize}
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \hline
+    \textbf{$K_{1\text{ and }3}$} & \textbf{\% Overshoot} & 
+	\textbf{Settling Time (sec)}  & \textbf{Response to Step Disturbance}\\ \hline
+    10000 & 0 & 3.92 & $1e^{-4}$\\ \hline 
+    500 & 0 & 4.06 & $2e^{-3}$ \\ \hline
+    100 & 0 & 4.5 & 0.01 \\ \hline
+    1 & 0 & 82 & 1 \\ \hline
+   \end{tabular}
+ \end{center}
+ \caption{Response Performance from PID Compensator}
+ \label{table:param}
+\end{table}
+
+%TODO show graphs that help explain?
 
 \end{document}
