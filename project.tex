@@ -395,4 +395,25 @@ required to be 1.
 
 %TODO show graphs that help explain?
 
+\subsection*{Task 6: Refined Arm Model and Frequency Response Characterization}
+
+$$G_3 = \frac{1}{1 + \frac{2\zeta s}{\omega_n} + \frac{s^2}{\omega_n^2}}
+      = \frac{1}{2.814\times 10^{-9} ~ s^2 + 3.183\times 10^{-5} ~ s + 1}$$
+
+\matlab{fig9.m}
+
+\begin{figure}[H]
+  \caption{Step response of spring load system}
+  \centering
+  \includegraphics[width=0.5\textwidth]{fig9.eps}
+\end{figure}
+
+The closed loop system transfer function changes to the following
+form:
+
+$$HDD(s) = \frac{F(s)G_1(s)G_2(s)G_3(s)}{1 + F(s)G_1(s)G_2(s)G_3(s)H(s)}$$
+
+Where $H(s) = 1$.  The parameter $K_1 = K_3$ is to be varied from 100
+to 1000, while the Bode plot of the closed loop system is observed.
+
 \end{document}
