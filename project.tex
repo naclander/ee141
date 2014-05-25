@@ -332,9 +332,9 @@ Using these values, the system shows the following values in its response:
 \begin{center}
   \begin{tabular}{ | l | l | l | p{5cm} |}
   \hline
-  \textbf{Performance Measure} & \textbf{Specification}\\ \hline 
-  Percent overshoot & 0.134\% \\ \hline 
-  Settling time ($2\%$ deviation) & 243ms \\ \hline 
+  \textbf{Performance Measure} & \textbf{Specification}\\ \hline
+  Percent overshoot & 0.134\% \\ \hline
+  Settling time ($2\%$ deviation) & 243ms \\ \hline
   Maximum Value of response to a unit step disturbance & $3\cdot10^{-3}$\\ \hline 
  \end{tabular}
 \end{center}
@@ -364,33 +364,33 @@ to $H(s) = 1$, while the controller now assumes a transfer function of the form
 
 $$ F(s) = K_1 + \frac{K_2}{s}  + K_3s $$
 
-where $K_2 = 0$ because the plant (arm) inherently has an integrating term. The
-project description furthermore states that $\frac{K_1}{k_2} = 1$.
-
-As in the previous Tasks, our system transfer function is still of the form:
+where $K_2 = 0$ because the plant (arm) inherently has an integrating
+term. The project description furthermore states that $\frac{K_1}{K_2}
+= 1$. As in the previous Tasks, our system transfer function is still
+of the form:
 
 $$HDD(s) = \frac{F(s)G_1(s)G_2(s)}{1 + F(s)G_1(s)G_2(s)H(s)}$$
 
 Using the PID Compensator the system was not able to acheive a settling time
 of less than 250 ms, as described in the spec. However, other design
 specifications were able to be met. The following table the \% overshoot,
-response time, and response to disturbance for varying levels of K. Note that
+response time, and response to disturbance for varying levels of $K$. Note that
 in this compensator both $K_1$ and $K_3$ were the same, as their ratio was
 required to be 1.
 
 \begin{table}[H]
   \begin{center}
-    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \begin{tabular}{ | r | r | r | p{5.5cm} |}
     \hline
-    \textbf{$K_{1\text{ and }3}$} & \textbf{\% Overshoot} & 
-	\textbf{Settling Time (sec)}  & \textbf{Response to Step Disturbance}\\ \hline
-    10000 & 0 & 3.92 & $1e^{-4}$\\ \hline 
+    $K_1$ and $K_3$ & \textbf{\% Overshoot} &
+        \textbf{Settling Time (sec)} & \textbf{Response to Step Disturbance} \\ \hline
+    10000 & 0 & 3.92 & $1e^{-4}$ \\ \hline
     500 & 0 & 4.06 & $2e^{-3}$ \\ \hline
-    100 & 0 & 4.5 & 0.01 \\ \hline
-    1 & 0 & 82 & 1 \\ \hline
-   \end{tabular}
- \end{center}
- \caption{Response Performance from PID Compensator}
+    100 & 0 & 4.50 & 0.01 \\ \hline
+    1 & 0 & 82.00 & 1 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Response Performance from PID Compensator}
 \end{table}
 
 %TODO show graphs that help explain?
