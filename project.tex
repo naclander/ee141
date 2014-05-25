@@ -28,6 +28,19 @@
 \author{Nathan Aclander (903933664), Troy Sankey (403942345), 
 and Sakib Shaikh (?????????)}
 
+\newcommand{\matlab}[1]{%
+\lstinputlisting[language=Matlab,
+                 breaklines=true,
+                 morekeywords={matlab2tikz},
+                 numbers=left,
+                 numberstyle={\tiny \color{black}},
+                 keywordstyle=\color{blue},
+                 showstringspaces=false,
+                 numbersep=9pt,
+                 xleftmargin=3em
+                ]{#1}%
+}
+
 \begin{document}
 
 \maketitle
@@ -113,16 +126,7 @@ And our Octave code and plot of the impulse response is shown below:
 %Octave source code as required by project specification.
 %\hspace{5em}
 %\begin{minipage}
-\lstinputlisting[language=Matlab,
-                 breaklines=true,
-                 morekeywords={matlab2tikz},
-                 numbers=left,
-                 numberstyle={\tiny \color{black}},
-                 keywordstyle=\color{blue},
-                 showstringspaces=false,
-                 numbersep=9pt,
-                 xleftmargin=3em
-                ]{fig1.m}
+\matlab{fig1.m}
 %\end{minipage}
 
 \begin{figure}[H]
@@ -176,16 +180,7 @@ values from Table 1.
 Using Octave, we observed the response to the unit step refrence input. The
 Octave code and plots are shown below. 
 
-\lstinputlisting[language=Matlab,
-                 breaklines=true,
-                 morekeywords={matlab2tikz},
-                 numbers=left,
-                 numberstyle={\tiny \color{black}},
-                 keywordstyle=\color{blue},
-                 showstringspaces=false,
-                 numbersep=9pt,
-                 xleftmargin=3em
-                ]{fig2.m}
+\matlab{fig2.m}
 %\end{minipage}
 
 \begin{figure}[H]
@@ -194,16 +189,7 @@ Octave code and plots are shown below.
   \includegraphics[width=0.5\textwidth]{fig2.eps}
 \end{figure}
 
-\lstinputlisting[language=Matlab,
-                 breaklines=true,
-                 morekeywords={matlab2tikz},
-                 numbers=left,
-                 numberstyle={\tiny \color{black}},
-                 keywordstyle=\color{blue},
-                 showstringspaces=false,
-                 numbersep=9pt,
-                 xleftmargin=3em
-                ]{fig3.m}
+\matlab{fig3.m}
 %\end{minipage}
 
 \begin{figure}[H]
@@ -237,16 +223,7 @@ Again, using the specifications for part 2 we get:
 Using Octave, we observed the response to the unit step refrence input. The
 Octave code and plots are shown below. 
 
-\lstinputlisting[language=Matlab,
-                 breaklines=true,
-                 morekeywords={matlab2tikz},
-                 numbers=left,
-                 numberstyle={\tiny \color{black}},
-                 keywordstyle=\color{blue},
-                 showstringspaces=false,
-                 numbersep=9pt,
-                 xleftmargin=3em
-                ]{fig4.m}
+\matlab{fig4.m}
 %\end{minipage}
 
 \begin{figure}[H]
@@ -255,16 +232,7 @@ Octave code and plots are shown below.
   \includegraphics[width=0.5\textwidth]{fig4.eps}
 \end{figure}
 
-\lstinputlisting[language=Matlab,
-                 breaklines=true,
-                 morekeywords={matlab2tikz},
-                 numbers=left,
-                 numberstyle={\tiny \color{black}},
-                 keywordstyle=\color{blue},
-                 showstringspaces=false,
-                 numbersep=9pt,
-                 xleftmargin=3em
-                ]{fig5.m}
+\matlab{fig5.m}
 %\end{minipage}
 
 \begin{figure}[H]
@@ -302,16 +270,7 @@ settling time. Values smaller, and larger than $K_a = 1450$ gave longer
 settling times. Settling time seemed to be the smallest at approximatley
 $K_a = 1450$.
 
-\lstinputlisting[language=Matlab,
-                 breaklines=true,
-                 morekeywords={matlab2tikz},
-                 numbers=left,
-                 numberstyle={\tiny \color{black}},
-                 keywordstyle=\color{blue},
-                 showstringspaces=false,
-                 numbersep=9pt,
-                 xleftmargin=3em
-                ]{fig6.m}
+\matlab{fig6.m}
 
 \begin{figure}[H]
   \caption{Shortest Settling Time Acheivable From Compensator: 
@@ -334,27 +293,9 @@ maximum response.
 
 %TODO put these side by side?
 
-\lstinputlisting[language=Matlab,
-                 breaklines=true,
-                 morekeywords={matlab2tikz},
-                 numbers=left,
-                 numberstyle={\tiny \color{black}},
-                 keywordstyle=\color{blue},
-                 showstringspaces=false,
-                 numbersep=9pt,
-                 xleftmargin=3em
-                ]{fig7.m}
+\matlab{fig7.m}
 
-\lstinputlisting[language=Matlab,
-                 breaklines=true,
-                 morekeywords={matlab2tikz},
-                 numbers=left,
-                 numberstyle={\tiny \color{black}},
-                 keywordstyle=\color{blue},
-                 showstringspaces=false,
-                 numbersep=9pt,
-                 xleftmargin=3em
-                ]{fig8.m}
+\matlab{fig8.m}
 
 %TODO put graphs in 1 figure, using subfigures
 
