@@ -123,11 +123,7 @@ $$\frac{1}{0.001s^3 + 1.02 s^2 + 20s}$$
 
 And our Octave code and plot of the impulse response is shown below:
 
-%Octave source code as required by project specification.
-%\hspace{5em}
-%\begin{minipage}
 \matlab{fig1.m}
-%\end{minipage}
 
 \begin{figure}[H]
   \caption{Open-loop transfer function of the cascaded HDD head reader
@@ -181,7 +177,6 @@ Using Octave, we observed the response to the unit step refrence input. The
 Octave code and plots are shown below. 
 
 \matlab{fig2.m}
-%\end{minipage}
 
 \begin{figure}[H]
   \caption{Step response for the closed loop system: $K_a = 50$}
@@ -190,7 +185,6 @@ Octave code and plots are shown below.
 \end{figure}
 
 \matlab{fig3.m}
-%\end{minipage}
 
 \begin{figure}[H]
   \caption{Step response for the closed loop system: $K_a = 400$}
@@ -224,7 +218,6 @@ Using Octave, we observed the response to the unit step refrence input. The
 Octave code and plots are shown below. 
 
 \matlab{fig4.m}
-%\end{minipage}
 
 \begin{figure}[H]
   \caption{Step response for the closed loop system: $K_a = 50$}
@@ -233,7 +226,6 @@ Octave code and plots are shown below.
 \end{figure}
 
 \matlab{fig5.m}
-%\end{minipage}
 
 \begin{figure}[H]
   \caption{Step response for the closed loop system: $K_a = 400$}
@@ -285,11 +277,11 @@ overshoot, but placed it outside the bound of the maximum value of the response
  to a unit step disturbance. Increasing $K_a$ higher brought the system
 closer to meeting the specification for the maximum bound, but further away from
 meeting the overshoot specification. $K_a = 220$ for example, gave a maximum
-value just under the required $5\cdot10^{-3}$.
+value just under the required $5\times 10^{-3}$.
 
-The following graphs show how alternating between $K_a$ being 200 or 220 pushes
-the response of the unit step disturbance over the boundary of its accepted 
-maximum response.
+The following graphs show how changing $K_a$ from 200 to 220 pushes
+the response of the unit step disturbance over the boundary of its
+accepted maximum response.
 
 \begin{figure}\centering
   \begin{minipage}{0.5\linewidth}
