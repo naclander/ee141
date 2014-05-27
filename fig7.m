@@ -9,6 +9,7 @@ D = 1 + N * G1 * F * 1
 step(N/D)
 
 axis([0 0.6 -0.0005 0.006]);
+title "K_a = 200"
 ylabel "y(t)";
 legend "hide";
 print -F:20 -depsc fig7.eps
