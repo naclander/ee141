@@ -1,8 +1,8 @@
 pkg load control;
 graphics_toolkit("gnuplot");
 
-SL = tf([1], [2.814344e-9 3.183023e-5 1]);
-step(SL);
+G3 = tf([1], [2.814344e-9 3.183023e-5 1]);
+step(G3);
 
 ylabel "y(t)";
 legend "hide";
