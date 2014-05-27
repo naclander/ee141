@@ -416,6 +416,23 @@ form:
 $$HDD(s) = \frac{F(s)G_1(s)G_2(s)G_3(s)}{1 + F(s)G_1(s)G_2(s)G_3(s)H(s)}$$
 
 Where $H(s) = 1$.  The parameter $K_1 = K_3$ is to be varied from 100
-to 1000, while the Bode plot of the closed loop system is observed.
+to 1000, while the Bode plot of the closed loop system is observed
+below.
+
+\matlab{fig10.m}
+
+\begin{figure}[H]\centering
+  \caption{bode plots for varying $K_1 = K_3$}
+  \begin{minipage}{9cm}
+    \includegraphics[width=1.0\textwidth]{fig10.eps}
+  \end{minipage}%
+  \begin{minipage}{9cm}
+    \includegraphics[width=1.0\textwidth]{fig11.eps}
+  \end{minipage}\\
+  \begin{minipage}{9cm}
+    \includegraphics[width=1.0\textwidth]{fig12.eps}
+  \end{minipage}
+\end{figure}
+
 
 \end{document}
