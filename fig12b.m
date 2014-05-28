@@ -1,7 +1,7 @@
 pkg load control;
 graphics_toolkit("gnuplot");
 
-K_1 = 100;
+K_1 = 1000;
 K_3 = K_1;
 G1 = tf([1], [0.001 1]);
 G2 = tf([1/20], [1/20 1 0]);
@@ -13,4 +13,4 @@ bode(N/D, {10e1 10e3});
 
 title(["K_1 = K_3 = " num2str(K_1)]);
 legend "hide";
-print -F:15 -depsc fig10.eps;
+print -F:15 -depsc fig12b.eps;
