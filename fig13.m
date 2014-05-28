@@ -8,6 +8,7 @@ N = G2
 D = 1 + N * G1 * F * 1
 rlocus(N/D)
 
+title("Root Locus")
 legend "hide";
-axis([-100,100,-50,50])
+axis([-25,25,-10,10])
 print -F:20 -depsc fig13.eps
