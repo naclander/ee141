@@ -8,9 +8,9 @@
 \restylefloat{table}
 \usepackage{listings}
 \usepackage{color}
+\usepackage{svg}
 \usepackage{fancybox}
 \usepackage{caption}
-\usepackage{subcaption}
 \usepackage[USenglish]{isodate}
 \isodate
 \usepackage{fancyhdr}
@@ -148,7 +148,12 @@ design given transient response performance specifications.
 
 \subsubsection*{Task 3A: Responses: Unit Step Refrence Input}
 
-%TODO Maybe show block diagram?
+\begin{figure}[H]
+  \centering
+  \caption{Block Diagram of HDD system}
+  \includegraphics[width=0.5\textwidth]{block_1.eps}
+\end{figure}
+
 
 Our closed-loop is represented as: 
 
@@ -194,7 +199,12 @@ Octave code and plots are shown below.
 
 \subsubsection*{Task 3B: Responses: Unit Step Disturbance}
 
-%TODO Maybe show block diagram?
+\begin{figure}[H]
+  \centering
+  \caption{Block Diagram of HDD system}
+  \includegraphics[width=0.5\textwidth]{block_2.eps}
+\end{figure}
+
 
 Our closed-loop is represented as: 
 
@@ -302,8 +312,10 @@ accepted maximum response.
   \end{minipage}
 \end{figure}
 
+The root locus Matlab code and plot are shown below:
+\matlab{fig13.m}
 \begin{figure}[H]
-  \caption{Root Locus Plot for HDD(S): We see that for any value of $K$ 
+  \caption{Root Locus Plot for HDD(s): We see that for any value of $K$ 
   (highlighted line) we cannot meet all of the requirements}
   \centering
   \includegraphics[width=0.5\textwidth]{fig13.eps}
