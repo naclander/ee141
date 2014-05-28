@@ -135,16 +135,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2"
-     inkscape:cx="373.34014"
-     inkscape:cy="606.695"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="320.26058"
+     inkscape:cy="595.43744"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1918"
-     inkscape:window-height="1059"
+     inkscape:window-height="1042"
      inkscape:window-x="0"
-     inkscape:window-y="19"
+     inkscape:window-y="37"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
@@ -154,7 +154,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -254,14 +254,15 @@
     <flowRoot
        xml:space="preserve"
        id="flowRoot5771"
-       style="font-size:11px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       transform="translate(15.556349,14.849242)"><flowRegion
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(9.1923881,14.849242)"><flowRegion
          id="flowRegion5773"><rect
            id="rect5775"
            width="84.852814"
            height="53.740116"
            x="147.78532"
-           y="376.3681" /></flowRegion><flowPara
+           y="376.3681"
+           style="font-size:14px" /></flowRegion><flowPara
          id="flowPara5779">Controller</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot5810"
@@ -281,14 +282,15 @@
     <flowRoot
        xml:space="preserve"
        id="flowRoot5846"
-       style="font-size:11px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
        transform="translate(7.0710678,16.970563)"><flowRegion
          id="flowRegion5848"><rect
            id="rect5850"
            width="82.731491"
            height="48.790367"
            x="301.22748"
-           y="376.3681" /></flowRegion><flowPara
+           y="376.3681"
+           style="font-size:14px" /></flowRegion><flowPara
          id="flowPara5852">Motor Coil</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot5854"
@@ -300,17 +302,6 @@
            x="393.85849"
            y="321.21378" /></flowRegion><flowPara
          id="flowPara5860">Disturbanc</flowPara></flowRoot>    <flowRoot
-       xml:space="preserve"
-       id="flowRoot5862"
-       style="font-size:11px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       transform="translate(-3.5355339,24.04163)"><flowRegion
-         id="flowRegion5864"><rect
-           id="rect5866"
-           width="79.195961"
-           height="33.23402"
-           x="385.3732"
-           y="314.84982" /></flowRegion><flowPara
-         id="flowPara5868">Disturbance</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot5870"
        style="font-size:4px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -360,37 +351,79 @@
          id="flowPara5921">-</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot5923"
-       style="font-size:11px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       transform="translate(13,17.25)"><flowRegion
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(9.4644662,15.835786)"><flowRegion
          id="flowRegion5925"><rect
            id="rect5927"
            width="77"
            height="50"
            x="458.25"
-           y="377.61218" /></flowRegion><flowPara
+           y="377.61218"
+           style="font-size:14px" /></flowRegion><flowPara
          id="flowPara5929">Arm Load</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot5931"
-       style="font-size:11px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
        transform="translate(-3.25,-7.25)"><flowRegion
          id="flowRegion5933"><rect
            id="rect5935"
            width="67.5"
            height="62.25"
            x="649"
-           y="388.11218" /></flowRegion><flowPara
+           y="388.11218"
+           style="font-size:14px" /></flowRegion><flowPara
          id="flowPara5937">Actuall</flowPara><flowPara
          id="flowPara5939">Head</flowPara><flowPara
          id="flowPara5941">Position</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot5943"
-       style="font-size:11px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       transform="translate(29.25,16)"><flowRegion
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(22.178932,14.585786)"><flowRegion
          id="flowRegion5945"><rect
            id="rect5947"
            width="81.25"
            height="51.75"
            x="356.25"
-           y="489.11218" /></flowRegion><flowPara
-         id="flowPara5949">Sensor</flowPara></flowRoot>  </g>
+           y="489.11218"
+           style="font-size:14px" /></flowRegion><flowPara
+         id="flowPara5949">Sensor</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot9375"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(2.1213203,9.1923878)"><flowRegion
+         id="flowRegion9377"><rect
+           id="rect9379"
+           width="50.91169"
+           height="49.497475"
+           x="12.020815"
+           y="341.71988"
+           style="font-size:14px" /></flowRegion><flowPara
+         id="flowPara9381">Desired</flowPara><flowPara
+         id="flowPara9383">Head</flowPara><flowPara
+         id="flowPara9385">Position</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot9387"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"><flowRegion
+         id="flowRegion9389"><rect
+           id="rect9391"
+           width="62.932503"
+           height="51.618793"
+           x="9.8994951"
+           y="336.06302"
+           style="font-size:14px" /></flowRegion><flowPara
+         id="flowPara9393">Desired</flowPara><flowPara
+         id="flowPara9395">Head</flowPara><flowPara
+         id="flowPara9397">Position</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot9399"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(-2.1213203,5.6568542)"><flowRegion
+         id="flowRegion9401"><rect
+           id="rect9403"
+           width="116.67262"
+           height="26.162951"
+           x="376.88791"
+           y="328.28485"
+           style="font-size:14px" /></flowRegion><flowPara
+         id="flowPara9405">Disturbance</flowPara></flowRoot>  </g>
 </svg>
