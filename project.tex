@@ -46,6 +46,14 @@ and Sakib Shaikh (703940302)}
 
 \section*{Summary of Objectives}
 
+This project attempts to design a controller that meets the set of performance
+specifications, as described in the project's instructions document. The
+controller affects the dynamics of the magnetic head reader of a hard disk drive
+(HDD). This report will look at several possible options of sensor design,
+discussing the benefits and risks of each one, and ultimatley choosing the
+system that appropriatley meets all of the performance requirements.
+
+
 \section*{Project Tasks}
 \subsection*{Task 1: Deriving the Transfer Function}
 
@@ -378,16 +386,18 @@ able to meet the specifications, as was the case in Task 3C.
 
 \subsection*{Task 5: The PID Compensator}
 
-In this task we used the PID Compensator architectire. The sensor reverted back
+In this task we used the PID Compensator architectire, as discussed in class,
+to manipulate the plant such that the system can meet the desired specifications.
+The particular specification of this task also reverted the sensor back
 to $H(s) = 1$, while the controller now assumes a transfer function of the form
 
 $$ F(s) = K_1 + \frac{K_2}{s}  + K_3s $$
 
 \noindent
 where $K_2 = 0$ because the plant (arm) inherently has an integrating
-term. The project description furthermore states that $\frac{K_1}{K_2}
-= 1$. As in the previous Tasks, our system transfer function is still
-of the form:
+term. $G_1(s)$ and $G_2(s)$ remained the same. The project description 
+furthermore states that $\frac{K_1}{K_2} = 1$. As in the previous Tasks, our 
+system transfer function is still of the form:
 
 $$HDD(s) = \frac{F(s)G_1(s)G_2(s)}{1 + F(s)G_1(s)G_2(s)H(s)}$$
 
@@ -412,6 +422,16 @@ required to be 1.
   \end{center}
   \caption{Response Performance from PID Compensator}
 \end{table}
+
+In Conclusion, this PID Compensator unfortunatley did not meet all requirements
+either. Although it met more requirements than the Proportional Compensator in
+Task 3, it did not perform as well as the Positional and Velocity Sensor in
+Task 4. Specifically, the PID Compensator did not meet the required settling
+time (Less than 250 ms). From the table above, the PID Compensator could only
+acheive a settling time of 3.82 s, at a rather high K value. However the 
+percent overshoot was practically nonexistent, and so if at some later point
+the specifications prefer extremley low overshoot percentage over settling time,
+this would be the compensator to use.
 
 %TODO show graphs that help explain?
 
@@ -465,5 +485,6 @@ below.
   \end{minipage}
 \end{figure}
 
+\section*{Conclusion}
 
 \end{document}
