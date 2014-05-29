@@ -163,15 +163,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="264.66122"
-     inkscape:cy="615.99405"
+     inkscape:zoom="1"
+     inkscape:cx="312.7491"
+     inkscape:cy="728.17089"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1918"
+     inkscape:window-width="958"
      inkscape:window-height="1042"
-     inkscape:window-x="0"
+     inkscape:window-x="2880"
      inkscape:window-y="37"
      inkscape:window-maximized="0" />
   <metadata
@@ -182,7 +182,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -250,19 +250,7 @@
            height="28.284271"
            x="393.85849"
            y="321.21378" /></flowRegion><flowPara
-         id="flowPara5860">Disturbanc</flowPara></flowRoot>    <flowRoot
-       xml:space="preserve"
-       id="flowRoot5862"
-       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       transform="translate(-3.5355339,24.04163)"><flowRegion
-         id="flowRegion5864"><rect
-           id="rect5866"
-           width="79.195961"
-           height="33.23402"
-           x="385.3732"
-           y="314.84982"
-           style="font-size:14px" /></flowRegion><flowPara
-         id="flowPara5868">Disturbance</flowPara></flowRoot>    <flowRoot
+         id="flowPara5860">Disturbance</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot5870-3"
        style="font-size:4px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -335,19 +323,7 @@
            x="356.25"
            y="489.11218"
            style="font-size:14px" /></flowRegion><flowPara
-         id="flowPara5949">Sensor</flowPara></flowRoot>    <flowRoot
-       xml:space="preserve"
-       id="flowRoot6223"
-       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       transform="translate(-2.1213203,10.606602)"><flowRegion
-         id="flowRegion6225"><rect
-           id="rect6227"
-           width="77.074638"
-           height="26.162951"
-           x="4.2426405"
-           y="363.64017"
-           style="font-size:14px" /></flowRegion><flowPara
-         id="flowPara6229">Disturbance</flowPara></flowRoot>    <rect
+         id="flowPara5949">Sensor</flowPara></flowRoot>    <rect
        style="fill:#ffffff;stroke:#000000"
        id="rect2993-5-7-13"
        width="96.428558"
@@ -464,5 +440,71 @@
            y="486.67676"
            style="font-size:14px" /></flowRegion><flowPara
          id="flowPara8219">Motor</flowPara><flowPara
-         id="flowPara8221">Coil</flowPara></flowRoot>  </g>
+         id="flowPara8221">Coil</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3083"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:14px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion3085"><rect
+           id="rect3087"
+           width="126"
+           height="45"
+           x="14.5"
+           y="347.36221"
+           style="font-size:14px" /></flowRegion><flowPara
+         id="flowPara3089"></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3091"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:14px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion3093"><rect
+           id="rect3095"
+           width="154"
+           height="43.5"
+           x="19"
+           y="335.86221"
+           style="font-size:14px" /></flowRegion><flowPara
+         id="flowPara3097"></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3099"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:14px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion3101"><rect
+           id="rect3103"
+           width="242.5"
+           height="116.5"
+           x="10.5"
+           y="272.86221"
+           style="font-size:14px" /></flowRegion><flowPara
+         id="flowPara3105"></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3107"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"><flowRegion
+         id="flowRegion3109"><rect
+           id="rect3111"
+           width="127.5"
+           height="60"
+           x="16"
+           y="309.36221"
+           style="font-size:14px" /></flowRegion><flowPara
+         id="flowPara3113" /></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3115"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"><flowRegion
+         id="flowRegion3117"><rect
+           id="rect3119"
+           width="186.5"
+           height="111.5"
+           x="17"
+           y="249.8622" /></flowRegion><flowPara
+         id="flowPara3121">Disturbanced</flowPara></flowRoot>    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="3.5000033"
+       y="384.86221"
+       id="text3123"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3125"
+         x="3.5000033"
+         y="384.86221"
+         style="font-size:14px">Disturbance</tspan></text>
+  </g>
 </svg>

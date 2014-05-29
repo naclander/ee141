@@ -136,14 +136,14 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="401.62823"
-     inkscape:cy="523.75734"
+     inkscape:cx="321.62823"
+     inkscape:cy="563.75734"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1918"
+     inkscape:window-width="958"
      inkscape:window-height="1042"
-     inkscape:window-x="0"
+     inkscape:window-x="2880"
      inkscape:window-y="37"
      inkscape:window-maximized="0" />
   <metadata
@@ -154,7 +154,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -383,18 +383,24 @@
            x="578.5"
            y="379.36218"
            style="font-size:14px" /></flowRegion><flowPara
-         id="flowPara9128">Spring Load</flowPara></flowRoot>    <flowRoot
+         id="flowPara9128">Spring Load</flowPara></flowRoot>    <text
        xml:space="preserve"
-       id="flowRoot9130"
-       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"><flowRegion
-         id="flowRegion9132"><rect
-           id="rect9134"
-           width="55.861435"
-           height="43.840622"
-           x="4.2426405"
-           y="349.49805"
-           style="font-size:14px" /></flowRegion><flowPara
-         id="flowPara9136">Desired</flowPara><flowPara
-         id="flowPara9138">Head</flowPara><flowPara
-         id="flowPara9140">Position</flowPara></flowRoot>  </g>
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="9"
+       y="356.36218"
+       id="text3315"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3317"
+         x="9"
+         y="356.36218">Desired</tspan><tspan
+         sodipodi:role="line"
+         x="9"
+         y="373.86218"
+         id="tspan3319">Head</tspan><tspan
+         sodipodi:role="line"
+         x="9"
+         y="391.36218"
+         id="tspan3321">Position</tspan></text>
+  </g>
 </svg>
