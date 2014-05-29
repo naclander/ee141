@@ -354,6 +354,8 @@ $K_a = 370$ and $K_1 = 0.04$ enabled the system to satisfy all requirements.
 A value of $K_1 = 0.04$ gave our system a zero at $-25$. Below, the graphical
 analysis of the system (with sensor) is shown, as well as specific values.
 
+%TODO Maybe put these side by side like task 3C?
+
 \matlab{fig14.m}
 
 \begin{figure}[H]
@@ -392,8 +394,6 @@ From the above graphs, the system shows the following values in its response:
 All above values were within the specifications of the system, and all were
 achieved with the same K values, unlike the system in Task 3.
 
-%TODO show graphs that help explain?
-
 In conclusion, it was also found that for this system, having a zero less than
 -20 enabled the creation of a system that was able to meet the specifications.
 This was because a zero at that particular location caused the poles of the
@@ -417,44 +417,72 @@ $$ F(s) = K_1 + \frac{K_2}{s}  + K_3s $$
 \noindent
 where $K_2 = 0$ because the plant (arm) inherently has an integrating
 term. $G_1(s)$ and $G_2(s)$ remained the same. The project description 
-furthermore states that $\frac{K_1}{K_2} = 1$. As in the previous Tasks, our 
+furthermore states that $\frac{K_1}{K_3} = 1$. As in the previous Tasks, our 
 system transfer function is still of the form:
 
 $$HDD(s) = \frac{F(s)G_1(s)G_2(s)}{1 + F(s)G_1(s)G_2(s)H(s)}$$
 
 Using the PID Compensator the system was not able to achieve a settling time
 of less than 250 ms, as described in the spec. However, other design
-specifications were able to be met. The following table the \% overshoot,
-response time, and response to disturbance for varying levels of $K$. Note that
-in this compensator both $K_1$ and $K_3$ were the same, as their ratio was
-required to be 1.
+specifications were able to be met. 
 
-\begin{table}[H]
-  \begin{center}
-    \begin{tabular}{ | r | r | r | p{5.5cm} |}
-    \hline
-    $K_1$ and $K_3$ & \textbf{\% Overshoot} &
-        \textbf{Settling Time (sec)} & \textbf{Response to Step Disturbance} \\ \hline
-    10000 & 0 & 3.92 & $1e^{-4}$ \\ \hline
-    500 & 0 & 4.06 & $2e^{-3}$ \\ \hline
-    100 & 0 & 4.50 & 0.01 \\ \hline
-    1 & 0 & 82.00 & 1 \\ \hline
-    \end{tabular}
-  \end{center}
-  \caption{Response Performance from PID Compensator}
-\end{table}
+When carrying out Matlab/Octave calculations, we were not able to always
+measure exact settling time, but in all of the graphs, it is pictorially clear
+that for any value of $K$ that the settling time was greater than 1 second, thus
+not within the 250 ms requirement. From varying $K$, it was noticed that $K$
+needed to be less than 210, for the disturbance response to be below the maximum
+disturbance. 
+
+\matlab{fig16.m}
+
+\begin{figure}[H]
+  \caption{Step Disturbance showing the higest value of $K$ such that the
+  system stays within the Maximum Disturbance value}
+  \centering
+  \includegraphics[width=0.5\textwidth]{fig16.eps}
+\end{figure}
+
+The maximum $K$ value for which we could reach in order to be below
+the maximum overshoot was 643. The overshoot keeps increasing for any larger
+value of $K$. 
+
+\matlab{fig17.m}
+
+\begin{figure}[H]
+  \caption{Step response showing the higest value of $K$ such that the
+  system stays within the Maximum Percent Overshoot}
+  \centering
+  \includegraphics[width=0.5\textwidth]{fig17.eps}
+\end{figure}
+
+Unfortunatley both aforementioned values of $K$ were too low to
+meet the settling time requirement, and although raising $K$ would have given
+a lower settling time the overshoot increases dramatically. 
+
+Interestingly we noticed at much higher values of $K$ the overshoot did seem
+to improve, and as mentioned before, so did the timing. This is what the system
+looked like with $K = 6000$:
+
+\matlab{fig18.m}
+
+\begin{figure}[H]
+  \caption{Dramatic improvement in the step response for higher values of $K$:
+  $K = 6000$}
+  \centering
+  \includegraphics[width=0.5\textwidth]{fig18.eps}
+\end{figure}
 
 In Conclusion, this PID Compensator unfortunately did not meet all requirements
 either. Although it met more requirements than the Proportional Compensator in
 Task 3, it did not perform as well as the Positional and Velocity Sensor in
-Task 4. Specifically, the PID Compensator did not meet the required settling
-time (Less than 250 ms). From the table above, the PID Compensator could only
-achieve a settling time of 3.82 s, at a rather high K value. However the 
-percent overshoot was practically nonexistent, and so if at some later point
-the specifications prefer extremely low overshoot percentage over settling time,
-this would be the compensator to use.
-
-%TODO show graphs that help explain?
+Task 4. For varying values of $K$, we could only meet 2 out of the 3 requirements.
+For $K < 210$, both the Percent Overshoot and Maximum Distrubance values were
+met, but not Settling Time. For much larger values of $K$ (6000 for example,
+as shown above), Percent Overshoot and Settling Time were met, but now Maximum
+Disturbance. This Compensator can still be used however, depending on which
+Performance Specification can be relaxed. If a value of $K$ was needed to be
+chosen for this System exactly, we would recommend sacrificing Overshoot rather
+than Disturbance, so as to create a more predictable output.
 
 \subsection*{Task 6: Refined Arm Model and Frequency Response Characterization}
 
