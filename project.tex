@@ -2,6 +2,7 @@
 \usepackage[cm]{fullpage}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{gensymb}
 \usepackage{amssymb}
 \usepackage{enumerate}
 \usepackage{float}
@@ -486,7 +487,7 @@ than Disturbance, so as to create a more predictable output.
 
 \subsection*{Task 6: Refined Arm Model and Frequency Response Characterization}
 
-\subsubsection*{Task 6A}
+\subsubsection*{Task 6A: Determining the Unit Step Response}
 
 The spring load system is now added to the block diagram as shown below:
 
@@ -513,7 +514,7 @@ The step response of this system is observed using the following code:
   \includegraphics[width=0.5\textwidth]{fig9.eps}
 \end{figure}
 
-\subsubsection*{Task 6B}
+\subsubsection*{Task 6B: Examining the Magnitude}
 
 The closed loop system transfer function for the entire system changes
 to the following form:
@@ -547,7 +548,7 @@ A resonant peak appears for values of $K_1 = K_3$ as low as about 500.
 As $K_1$ ($K_3$) is increased, the magnitude of the peak increases
 and moves towards the right.
 
-\subsubsection*{Task 6C}
+\subsubsection*{Task 6C: Finding a range for $K$}
 
 For values of $K_1$ ($K_3$) below 371, the system functions correctly,
 but does not meet the transient specifications.  It does not
@@ -562,8 +563,97 @@ and $K_3 = 1113$, both transient specifications can be satisfied.
 
 %TODO add graphs
 
-\subsubsection*{Task 6D}
+\subsubsection*{Task 6D: Gain and Phase Margins}
 
 \section*{Conclusion}
+
+In conclusion, this project designed and observed several different controllers
+for the Hard Disk Drive system. Not all controllers met the neccessary
+specifications, and some performed better on certain specifications than others.
+
+In the end, the controllers that performed best were the Positional and Velocity
+Sensor (Task 4), and the Refined Arm Model design (Task 6). However, the extra
+specification of a resonant peak outside the 3-dB bandwidth was not met for the
+Refiend Arm Model design.
+
+The block diagram for the Positional and Velocity Sensor is shown again, below:
+
+\begin{figure}[H]
+  \centering
+  \caption{Block Diagram of HDD system}
+  \includegraphics[width=0.5\textwidth]{block_1.eps}
+\end{figure}
+
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \hline
+    \textbf{Block} & \textbf{Mathematical Model} \\ \hline
+    Controller & $F(s) = K_a$ \\ \hline 
+    Motor Coil& $G_1 = \frac{K_m}{Ls + R}$ \\ \hline
+    Arm Load & $G_2 =  \frac{1}{s(Js + b)}$ \\ \hline
+    Sensor & $H(s) = 1 + K_1s$ \\ \hline
+   \end{tabular}
+ \end{center}
+ \caption{Block Architecture Description}
+\end{table}
+
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \hline
+    \textbf{$K$} & \textbf{Value} \\ \hline
+    $K_a$ & $370$ \\ \hline
+    $K_1$ & $0.04$ \\ \hline
+   \end{tabular}
+ \end{center}
+ \caption{Values of $K$ for the Architecture}
+\end{table}
+
+The closed loop transfer fucntion of the entire system, as mentioned in Task 4,
+came out to be:
+
+$$HDD(s) = \frac{F(s)G_1(s)G_2(s)}{1 + F(s)G_1(s)G_2(s)H(s)}$$
+
+It was shown in Task 4 that all requirements were met. The table showing the
+perormance results is shown below for convenience:
+
+\begin{table}[H]
+\begin{center}
+  \begin{tabular}{ | l | l | l | p{5cm} |}
+  \hline
+  \textbf{Performance Measure} & \textbf{Specification}\\ \hline 
+  Percent overshoot & Less than $5\%$ \\ \hline 
+  Settling time ($2\%$ deviation) & Less than 250 ms \\ \hline 
+  Maximum Value of response to a unit step disturbance & Less than 
+  $5\cdot10^{-3}$ \\ \hline 
+ \end{tabular}
+\end{center}
+\caption{Transient Response Performance Specifications}
+\end{table}
+
+Note that for this particular $K_1$, $K_a = 370$ was the minimum value of $K$
+such that the settling time would be under 250 ms. For higher values of $K$ the
+settling time goes down, without affecting any of the other parameters, although
+the Gain Margin does get lower for very large values of $K_a$. We can see the
+Gain and Phase Margins below:
+
+
+\matlab{fig20.m}
+
+\begin{figure}[H]
+  \caption{Phase and Gain Margins for the system}
+  \centering
+  \includegraphics[width=0.5\textwidth]{fig20.eps}
+\end{figure}
+
+In the end, the Positional and Velocity Sensor enabled us the system to stay
+within the specified requirements. The Gain Margin was also acceptable. The Phase
+Margin was high at $180 \degree$, and its frequency was not able to be calculated
+by Matlab/Octave. The $K_a$ chosen for this design was rather conservative at
+$K_a = 370$, future designs following this model could raise $K_a$ to 1000 to
+acheive a settling time of 165 ms, although lowering the Gain Margin. If in the
+future, there is more constraint on the Gain Margin, a range for $K_a$ could be
+narrowed down even further.
 
 \end{document}
