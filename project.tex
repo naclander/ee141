@@ -543,10 +543,24 @@ below.
   \end{minipage}
 \end{figure}
 
-A peak (at the resonant frequency) appears for values of $K_1 = K_3$
-greater than 700.  From 700 to 1000, the peak increases in magnitude.
+A resonant peak appears for values of $K_1 = K_3$ as low as about 500.
+As $K_1$ ($K_3$) is increased, the magnitude of the peak increases
+and moves towards the right.
 
 \subsubsection*{Task 6C}
+
+For values of $K_1$ ($K_3$) below 371, the system functions correctly,
+but does not meet the transient specifications.  It does not
+overshoot, but it also does not have a sufficiently short 2\% settling
+time.  For $K_1 = K_3 = 371$, the 2\% settling time is about 940 ms
+(larger than the required 250 ms).
+
+%TODO add graphs
+
+However, by breaking the $K_1 = K_3$ constraint by setting $K_1 = 371$
+and $K_3 = 1113$, both transient specifications can be satisfied.
+
+%TODO add graphs
 
 \subsubsection*{Task 6D}
 
