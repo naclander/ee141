@@ -50,8 +50,8 @@ This project attempts to design a controller that meets the set of performance
 specifications, as described in the project's instructions document. The
 controller affects the dynamics of the magnetic head reader of a hard disk drive
 (HDD). This report will look at several possible options of sensor design,
-discussing the benefits and risks of each one, and ultimatley choosing the
-system that appropriatley meets all of the performance requirements.
+discussing the benefits and risks of each one, and ultimately choosing the
+system that appropriately meets all of the performance requirements.
 
 
 \section*{Project Tasks}
@@ -147,7 +147,7 @@ model parameters.
 \subsection*{Task 3: Proportional Compensator}
 
 This task required us to find the step response of the closed-loop system to
-the unit step refrence input, while assuming zero disturbance. To complete the
+the unit step reference input, while assuming zero disturbance. To complete the
 closed loop we were given the sensor's transfer function $H(s) = 1$ and the
 candidate controller $F(s) = K_a$. This task relies on our understanding on
 block diagrams as explained in class, as well as application of compensator
@@ -182,10 +182,10 @@ values from Table 1.
   + 808 s^2 + 8000 s}$  \\ \hline
  \end{tabular}
 \end{center}
-\caption{Closed-Loop System: Unit Step Refrence Input}
+\caption{Closed-Loop System: Unit Step Reference Input}
 \end{table}
 
-Using Octave, we observed the response to the unit step refrence input. The
+Using Octave, we observed the response to the unit step reference input. The
 Octave code and plots are shown below. 
 
 \matlab{fig2.m}
@@ -231,7 +231,7 @@ Again, using the specifications for part 2 we get:
 \caption{Closed-Loop System: Unit Step Disturbance}
 \end{table}
 
-Using Octave, we observed the response to the unit step refrence input. The
+Using Octave, we observed the response to the unit step reference input. The
 Octave code and plots are shown below. 
 
 \matlab{fig4.m}
@@ -252,8 +252,8 @@ Octave code and plots are shown below.
 
 \subsubsection*{Task 3C: Satisfying the Performance Specifications}
 
-For this subtask, a value for $K_a$ was needed to meet performance 
-specifications of the system. The specifications are shown inthe table below.
+For this sub-task, a value for $K_a$ was needed to meet performance 
+specifications of the system. The specifications are shown in the table below.
 
 \begin{table}[H]
 \begin{center}
@@ -273,16 +273,16 @@ After observing the response of the system for varying values of $K_a$ we
 concluded that it was not possible to meet all aspects of the specifications
 from the proportional compensator. 
 
-The shortest settling time we could get was approximatley 0.37 seconds, for
+The shortest settling time we could get was approximately 0.37 seconds, for
 $K_a = 1450$. We noticed a parabolic relationship between $K_a$ and the
 settling time. Values smaller, and larger than $K_a = 1450$ gave longer
-settling times. Settling time seemed to be the smallest at approximatley
+settling times. Settling time seemed to be the smallest at approximately
 $K_a = 1450$.
 
 \matlab{fig6.m}
 
 \begin{figure}[H]
-  \caption{Shortest Settling Time Acheivable From Compensator: 
+  \caption{Shortest Settling Time Achievable From Compensator: 
   $K_a \approx 1450$, Settling Time $\approx 370$ ms}
   \centering
   \includegraphics[width=0.5\textwidth]{fig6.eps}
@@ -310,7 +310,7 @@ accepted maximum response.
 \end{figure}
 
 \begin{figure}[H]\centering
-  \caption{step responses for different $K_a$}
+  \caption{Unit step disturbance for different $K_a$}
   \begin{minipage}{9cm}
     \includegraphics[width=1.0\textwidth]{fig7.eps}
   \end{minipage}%
@@ -331,7 +331,7 @@ The root locus Matlab code and plot are shown below:
 In conclusion, this task required building a complete mathematical model for
 the HDD Read Head system, and then using this model to meet required
 specifications. This task also showed, however, that adding a compensator will
-not neccessarilly change the system to meet all specifications. In part C of
+not necessarily change the system to meet all specifications. In part C of
 this task, we saw that when adding a compensator we were able to meet certain
 specification requirements, but never all of them. This task made an important
 observation in showing not all compensators are the same, as tasks later on
@@ -342,9 +342,9 @@ will show.
 In this task an alternative output sensor was considered, that measures the
 position as well as the velocity of the head reader. Its represented by $H(s)
 = 1 + K_1s$. This task, like Task 3C, relied in our understanding from class of
-manipulating transfer functions with compensators. Unlike Task 3C, we now have
-control over both poles and zeroes. Our system transfer function is now the 
-same as in task 3A, but with a different value for $H(s)$:
+manipulating transfer functions with compensators. However unlike Task 3C, we
+now have control over both poles and zeroes. Our system transfer function is
+now the same as in task 3A, but with a different value for $H(s)$:
 
 $$HDD(s) = \frac{F(s)G_1(s)G_2(s)}{1 + F(s)G_1(s)G_2(s)H(s)}$$
 
@@ -369,14 +369,14 @@ Using these values, the system shows the following values in its response:
 \end{table}
 
 All above values were within the specifications of the system, and all were
-achieved with the same K values, inlike the system in Task 3.
+achieved with the same K values, unlike the system in Task 3.
 
 %TODO show graphs that help explain?
 
 In conclusion, it was also found that for this system, having a zero less than
 -20 enabled the creation of a system that was able to meet the specifications.
 This was because a zero at that particular location caused the poles of the
-system to break out towards the left, and into the desired regioun (as set by
+system to break out towards the left, and into the desired region (as set by
 the specifications).
 
 This task showed how having control of both zeros and poles of the system gave
@@ -386,7 +386,7 @@ able to meet the specifications, as was the case in Task 3C.
 
 \subsection*{Task 5: The PID Compensator}
 
-In this task we used the PID Compensator architectire, as discussed in class,
+In this task we used the PID Compensator architecture, as discussed in class,
 to manipulate the plant such that the system can meet the desired specifications.
 The particular specification of this task also reverted the sensor back
 to $H(s) = 1$, while the controller now assumes a transfer function of the form
@@ -401,7 +401,7 @@ system transfer function is still of the form:
 
 $$HDD(s) = \frac{F(s)G_1(s)G_2(s)}{1 + F(s)G_1(s)G_2(s)H(s)}$$
 
-Using the PID Compensator the system was not able to acheive a settling time
+Using the PID Compensator the system was not able to achieve a settling time
 of less than 250 ms, as described in the spec. However, other design
 specifications were able to be met. The following table the \% overshoot,
 response time, and response to disturbance for varying levels of $K$. Note that
@@ -423,14 +423,14 @@ required to be 1.
   \caption{Response Performance from PID Compensator}
 \end{table}
 
-In Conclusion, this PID Compensator unfortunatley did not meet all requirements
+In Conclusion, this PID Compensator unfortunately did not meet all requirements
 either. Although it met more requirements than the Proportional Compensator in
 Task 3, it did not perform as well as the Positional and Velocity Sensor in
 Task 4. Specifically, the PID Compensator did not meet the required settling
 time (Less than 250 ms). From the table above, the PID Compensator could only
-acheive a settling time of 3.82 s, at a rather high K value. However the 
+achieve a settling time of 3.82 s, at a rather high K value. However the 
 percent overshoot was practically nonexistent, and so if at some later point
-the specifications prefer extremley low overshoot percentage over settling time,
+the specifications prefer extremely low overshoot percentage over settling time,
 this would be the compensator to use.
 
 %TODO show graphs that help explain?
