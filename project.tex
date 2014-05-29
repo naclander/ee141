@@ -351,9 +351,29 @@ $$HDD(s) = \frac{F(s)G_1(s)G_2(s)}{1 + F(s)G_1(s)G_2(s)H(s)}$$
 The system now has two different K values that can be changed in order to meet
 the specifications from Table 4. After trying different K values we found that
 $K_a = 370$ and $K_1 = 0.04$ enabled the system to satisfy all requirements.
-A value of $K_1 = 0.04$ gave our system a zero at $-25$.
+A value of $K_1 = 0.04$ gave our system a zero at $-25$. Below, the graphical
+analysis of the system (with sensor) is shown, as well as specific values.
 
-Using these values, the system shows the following values in its response:
+\matlab{fig14.m}
+
+\begin{figure}[H]
+  \caption{System's unit Step response with Positional Velocity Sensor, with response
+  time and percent overshoot within specification} 
+  \centering
+  \includegraphics[width=0.5\textwidth]{fig14.eps}
+\end{figure}
+
+\matlab{fig15.m}
+
+\begin{figure}[H]
+  \caption{System's unit Step disturbance with Positional Velocity Sensor, with
+  maximum value of response within specification}
+  \centering
+  \includegraphics[width=0.5\textwidth]{fig15.eps}
+\end{figure}
+
+
+From the above graphs, the system shows the following values in its response:
 
 \begin{table}[H]
 \begin{center}
@@ -365,7 +385,8 @@ Using these values, the system shows the following values in its response:
   Maximum Value of response to a unit step disturbance & $3\cdot10^{-3}$\\ \hline 
  \end{tabular}
 \end{center}
-\caption{Response Performance from Positional Velocity Sensor}
+\caption{Response Performance from Positional Velocity Sensor $H(s) = 1 +
+0.004 s$}
 \end{table}
 
 All above values were within the specifications of the system, and all were
