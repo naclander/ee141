@@ -486,17 +486,24 @@ than Disturbance, so as to create a more predictable output.
 
 \subsection*{Task 6: Refined Arm Model and Frequency Response Characterization}
 
+\subsubsection*{Task 6A}
+
+The spring load system is now added to the block diagram as shown below:
+
 \begin{figure}[H]
   \centering
   \caption{Refined System Model}
   \includegraphics[width=0.5\textwidth]{block_3.eps}
 \end{figure}
 
-This is the transfer function for the spring load system:
-
+This is the transfer function for the (isolated) spring load system:
 
 $$G_3 = \frac{1}{1 + \frac{2\zeta s}{\omega_n} + \frac{s^2}{\omega_n^2}}
       = \frac{1}{2.814\times 10^{-9} ~ s^2 + 3.183\times 10^{-5} ~ s + 1}$$
+
+\noindent
+where given values for $\zeta$ and $\omega_n$ have been filled in.
+The step response of this system is observed using the following code:
 
 \matlab{fig9.m}
 
@@ -506,8 +513,10 @@ $$G_3 = \frac{1}{1 + \frac{2\zeta s}{\omega_n} + \frac{s^2}{\omega_n^2}}
   \includegraphics[width=0.5\textwidth]{fig9.eps}
 \end{figure}
 
-The closed loop system transfer function changes to the following
-form:
+\subsubsection*{Task 6B}
+
+The closed loop system transfer function for the entire system changes
+to the following form:
 
 $$HDD(s) = \frac{F(s)G_1(s)G_2(s)G_3(s)}{1 + F(s)G_1(s)G_2(s)G_3(s)H(s)}$$
 
@@ -533,6 +542,13 @@ below.
     \includegraphics[width=1.0\textwidth]{fig12b.eps}
   \end{minipage}
 \end{figure}
+
+A peak (at the resonant frequency) appears for values of $K_1 = K_3$
+greater than 700.  From 700 to 1000, the peak increases in magnitude.
+
+\subsubsection*{Task 6C}
+
+\subsubsection*{Task 6D}
 
 \section*{Conclusion}
 
