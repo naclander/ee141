@@ -552,13 +552,11 @@ and moves towards the right.
 
 \subsubsection*{Task 6C: Finding a range for $K$}
 
-For values of $K_1$ ($K_3$) below 371, the system functions correctly,
-but does not meet the transient specifications.  It does not
+For values of $K_1$ ($K_3$) at or below 371, the system has a finite
+response, but does not meet the transient specifications.  It does not
 overshoot, but it also does not have a sufficiently short 2\% settling
-time.  For $K_1 = K_3 = 371$, the 2\% settling time is about 940 ms
-(larger than the required 250 ms).
-
-%TODO add graphs
+time for any value of $K_1$ ($K_3$).  For $K_1 = K_3 = 371$, the 2\%
+settling time is about 940 ms (larger than the required 250 ms).
 
 However, by breaking the $K_1 = K_3$ constraint, setting $K_1 = 371$
 and $K_3 = 853$, the response is closer to meeting the specifications.
@@ -594,8 +592,23 @@ and $K_3 = 853$, the response is closer to meeting the specifications.
   \end{minipage}
 \end{figure}
 
+Even with the relaxed constraint ($K_1 \neq K_3$), the transient
+constraints could not be satisfied.  For a high performance hard disk
+drive, it might be better to sacrifice overshoot and achieve lower
+latency, at the cost of power (more torque required to move the read
+head the extra distance).  However, for a low power laptop, it might
+be better to sacrifice speed to meet the 5\% overshoot requirement.
 
 \subsubsection*{Task 6D: Gain and Phase Margins}
+
+\begin{figure}[H]
+  \caption{Phase and Gain Margins for the system}
+  \centering
+  \includegraphics[width=0.7\textwidth]{fig_6d.eps}
+\end{figure}
+
+A gain margin of 30 dB and a phase margin of 99 degrees indicates that
+the system is stable, since they are nonnegative values.
 
 \section*{Conclusion}
 
