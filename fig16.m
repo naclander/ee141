@@ -9,4 +9,4 @@ N = G2
 D = 1 + N * G1 * F * H
 Step = N/D
 step(Step)
-print -depsc fix16.eps
+print -depsc fig16.eps
