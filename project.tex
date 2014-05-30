@@ -123,7 +123,7 @@ specification mentioned to use the values from the table below:
  \caption{Model Parameters}
 \end{table}
 
-After pluging in our values from the table into our transfer function
+After plugging in our values from the table into our transfer function
 equation we get the following:
 
 $$\frac{1}{0.001s^3 + 1.02 s^2 + 20s}$$
@@ -154,7 +154,7 @@ candidate controller $F(s) = K_a$. This task relies on our understanding on
 block diagrams as explained in class, as well as application of compensator
 design given transient response performance specifications.
 
-\subsubsection*{Task 3A: Responses: Unit Step Refrence Input}
+\subsubsection*{Task 3A: Responses: Unit Step Reference Input}
 
 \begin{figure}[H]
   \centering
@@ -437,7 +437,7 @@ disturbance.
 \matlab{fig16.m}
 
 \begin{figure}[H]
-  \caption{Step Disturbance showing the higest value of $K$ such that the
+  \caption{Step Disturbance showing the highest value of $K$ such that the
   system stays within the Maximum Disturbance value}
   \centering
   \includegraphics[width=0.5\textwidth]{fig16.eps}
@@ -450,14 +450,14 @@ value of $K$.
 \matlab{fig17.m}
 
 \begin{figure}[H]
-  \caption{Step response showing the higest value of $K$ such that the
-  system stays within the Maximum Percent Overshoot. Note the extremley long
+  \caption{Step response showing the highest value of $K$ such that the
+  system stays within the Maximum Percent Overshoot. Note the extremely long
   settling time}
   \centering
   \includegraphics[width=0.5\textwidth]{fig17.eps}
 \end{figure}
 
-Unfortunatley both aforementioned values of $K$ were too low to
+Unfortunately both aforementioned values of $K$ were too low to
 meet the settling time requirement, and although raising $K$ would have given
 a lower settling time the overshoot increases dramatically, as shown below: 
 
@@ -474,7 +474,7 @@ In Conclusion, this PID Compensator unfortunately did not meet all requirements
 either. Although it met more requirements than the Proportional Compensator in
 Task 3, it did not perform as well as the Positional and Velocity Sensor in
 Task 4. For varying values of $K$, we could only meet 2 out of the 3 requirements.
-For $K < 210$, both the Percent Overshoot and Maximum Distrubance values were
+For $K < 210$, both the Percent Overshoot and Maximum Disturbance values were
 met, but not Settling Time. For much larger values of $K$ (6000 for example,
 as shown above), Settling Time was met, but not Maximum Disturbance. This 
 Compensator can still be used however, depending on which Performance 
@@ -483,6 +483,11 @@ this System exactly, we would recommend sacrificing Overshoot rather than
 Disturbance, so as to create a more predictable output.
 
 \subsection*{Task 6: Refined Arm Model and Frequency Response Characterization}
+
+The HDD architecture has been revised again, so that now the flexure spring
+is no longer assumed to be rigid. This task attempts to design a sensor for the
+HDD using this new model, using our knowledge of settling time and overshoot
+as learned in class, and understanding of gain and phase margins.
 
 \subsubsection*{Task 6A: Determining the Unit Step Response}
 
@@ -595,7 +600,7 @@ and $K_3 = 853$, the response is closer to meeting the specifications.
 \section*{Conclusion}
 
 In conclusion, this project designed and observed several different controllers
-for the Hard Disk Drive system. Not all controllers met the neccessary
+for the Hard Disk Drive system. Not all controllers met the necessary
 specifications, and some performed better on certain specifications than others.
 
 In the end, the controllers that performed best were the Positional and Velocity
@@ -637,13 +642,13 @@ The block diagram for the Positional and Velocity Sensor is shown again, below:
  \caption{Values of $K$ for the Architecture}
 \end{table}
 
-The closed loop transfer fucntion of the entire system, as mentioned in Task 4,
+The closed loop transfer function of the entire system, as mentioned in Task 4,
 came out to be:
 
 $$HDD(s) = \frac{F(s)G_1(s)G_2(s)}{1 + F(s)G_1(s)G_2(s)H(s)}$$
 
 It was shown in Task 4 that all requirements were met. The table showing the
-perormance results is shown below for convenience:
+performance results is shown below for convenience:
 
 \begin{table}[H]
 \begin{center}
@@ -679,7 +684,7 @@ within the specified requirements. The Gain Margin was also acceptable. The Phas
 Margin was high at $180 \degree$, and its frequency was not able to be calculated
 by Matlab/Octave. The $K_a$ chosen for this design was rather conservative at
 $K_a = 370$, future designs following this model could raise $K_a$ to 1000 to
-acheive a settling time of 165 ms, although lowering the Gain Margin. If in the
+achieve a settling time of 165 ms, although lowering the Gain Margin. If in the
 future, there is more constraint on the Gain Margin, a range for $K_a$ could be
 narrowed down even further. However the current values for the Positional and
 Velocity Sensor meet all specifications, and is the sensor this project
