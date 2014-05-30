@@ -7,9 +7,9 @@ GG = tf([1], [0.001 1.02 20 0]); %G_1G_2 Transfer Fcuntion
 F = tf([x x], [1]); %K_a =370 
 N = F * GG;
 D = 1 + N * H;
-step(N / D);
+step(N / D, [0:0.0001:0.03]);
 
-xlim([0 0.1])
+xlim([0 0.03])
 ylabel "y(t)";
 legend "hide";
 print -F:20 -depsc fig18.eps;
