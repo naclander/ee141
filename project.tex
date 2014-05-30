@@ -558,10 +558,40 @@ time.  For $K_1 = K_3 = 371$, the 2\% settling time is about 940 ms
 
 %TODO add graphs
 
-However, by breaking the $K_1 = K_3$ constraint by setting $K_1 = 371$
-and $K_3 = 1113$, both transient specifications can be satisfied.
+However, by breaking the $K_1 = K_3$ constraint, setting $K_1 = 371$
+and $K_3 = 853$, the response is closer to meeting the specifications.
 
-%TODO add graphs
+\begin{table}[H]
+\begin{center}
+  \begin{tabular}{ | c | c | c | c |}
+  \hline
+  $K_1$ & $K_3$ & \% overshoot & settling time (ms) \\ \hline
+  371   &   853 &           12 &                250 \\ \hline
+  371   &   631 &            5 &                650 \\ \hline
+ \end{tabular}
+\end{center}
+\caption{sets of parameters that satisfy at least one condition}
+\end{table}
+
+\begin{figure}\centering
+  \begin{minipage}{0.5\linewidth}
+    \matlab{fig19a.m}%
+  \end{minipage}%
+  \begin{minipage}{0.5\linewidth}
+    \matlab{fig19b.m}
+  \end{minipage}%
+\end{figure}
+
+\begin{figure}[H]\centering
+  \caption{closed loop step responses, making different sacrifices}
+  \begin{minipage}{9cm}
+    \includegraphics[width=1.0\textwidth]{fig19a.eps}
+  \end{minipage}%
+  \begin{minipage}{9cm}
+    \includegraphics[width=1.0\textwidth]{fig19b.eps}
+  \end{minipage}
+\end{figure}
+
 
 \subsubsection*{Task 6D: Gain and Phase Margins}
 
