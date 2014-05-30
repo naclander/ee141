@@ -601,14 +601,25 @@ be better to sacrifice speed to meet the 5\% overshoot requirement.
 
 \subsubsection*{Task 6D: Gain and Phase Margins}
 
+For the parameters $K_1 = 371$ and $K_3 = 853$, the following margins
+were calculated:
+
 \begin{figure}[H]
-  \caption{Phase and Gain Margins for the system}
+  \caption{Phase and Gain Margins for the tweaked system}
   \centering
   \includegraphics[width=0.7\textwidth]{fig_6d.eps}
 \end{figure}
 
 A gain margin of 30 dB and a phase margin of 99 degrees indicates that
 the system is stable, since they are nonnegative values.
+
+In conclusion, we tried adjusting the parameters of the PD controller
+to make the system response meet the requirements, but the flexure
+spring reduced the quality of the plant too much.  By adjusting the
+ratio between $K_1$ and $K_3$ (proportional and derivative parameters
+respectively), we were able to get close.  Depending on the type of
+hard drive, either the overshoot or settling time requirements will be
+violated.
 
 \section*{Conclusion}
 
