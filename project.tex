@@ -50,7 +50,7 @@ and Sakib Shaikh (703940302)}
 This project attempts to design a controller that meets the set of performance
 specifications, as described in the project's instructions document. The
 controller affects the dynamics of the magnetic head reader of a hard disk drive
-(HDD). This report will look at several possible options of sensor design,
+(HDD). This report will examine several possible options for sensor design,
 discussing the benefits and risks of each one, and ultimately choosing the
 system that appropriately meets all of the performance requirements.
 
@@ -443,7 +443,7 @@ disturbance.
   \includegraphics[width=0.5\textwidth]{fig16.eps}
 \end{figure}
 
-The maximum $K$ value for which we could reach in order to be below
+The maximum $K$ value which we could reach in order to be below
 the maximum overshoot was 643. The overshoot keeps increasing for any larger
 value of $K$. 
 
@@ -451,18 +451,15 @@ value of $K$.
 
 \begin{figure}[H]
   \caption{Step response showing the higest value of $K$ such that the
-  system stays within the Maximum Percent Overshoot}
+  system stays within the Maximum Percent Overshoot. Note the extremley long
+  settling time}
   \centering
   \includegraphics[width=0.5\textwidth]{fig17.eps}
 \end{figure}
 
 Unfortunatley both aforementioned values of $K$ were too low to
 meet the settling time requirement, and although raising $K$ would have given
-a lower settling time the overshoot increases dramatically. 
-
-Interestingly we noticed at much higher values of $K$ the overshoot did seem
-to improve, and as mentioned before, so did the timing. This is what the system
-looked like with $K = 6000$:
+a lower settling time the overshoot increases dramatically, as shown below: 
 
 \matlab{fig18.m}
 
@@ -479,11 +476,11 @@ Task 3, it did not perform as well as the Positional and Velocity Sensor in
 Task 4. For varying values of $K$, we could only meet 2 out of the 3 requirements.
 For $K < 210$, both the Percent Overshoot and Maximum Distrubance values were
 met, but not Settling Time. For much larger values of $K$ (6000 for example,
-as shown above), Percent Overshoot and Settling Time were met, but now Maximum
-Disturbance. This Compensator can still be used however, depending on which
-Performance Specification can be relaxed. If a value of $K$ was needed to be
-chosen for this System exactly, we would recommend sacrificing Overshoot rather
-than Disturbance, so as to create a more predictable output.
+as shown above), Settling Time was met, but not Maximum Disturbance. This 
+Compensator can still be used however, depending on which Performance 
+Specification can be relaxed. If a value of $K$ was needed to be chosen for 
+this System exactly, we would recommend sacrificing Overshoot rather than
+Disturbance, so as to create a more predictable output.
 
 \subsection*{Task 6: Refined Arm Model and Frequency Response Characterization}
 
@@ -572,9 +569,9 @@ for the Hard Disk Drive system. Not all controllers met the neccessary
 specifications, and some performed better on certain specifications than others.
 
 In the end, the controllers that performed best were the Positional and Velocity
-Sensor (Task 4), and the Refined Arm Model design (Task 6). However, the extra
-specification of a resonant peak outside the 3-dB bandwidth was not met for the
-Refiend Arm Model design.
+Sensor (Task 4), and the PID Compensator (Task 5). However, only 2 of the 3
+specifications were able to be met for the PID Compensator, and therefore the
+recommendation is to use the Positional and Velocity Sensor.
 
 The block diagram for the Positional and Velocity Sensor is shown again, below:
 
@@ -654,6 +651,8 @@ by Matlab/Octave. The $K_a$ chosen for this design was rather conservative at
 $K_a = 370$, future designs following this model could raise $K_a$ to 1000 to
 acheive a settling time of 165 ms, although lowering the Gain Margin. If in the
 future, there is more constraint on the Gain Margin, a range for $K_a$ could be
-narrowed down even further.
+narrowed down even further. However the current values for the Positional and
+Velocity Sensor meet all specifications, and is the sensor this project
+recommends be used in the hard disk drive.
 
 \end{document}
