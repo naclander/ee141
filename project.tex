@@ -67,13 +67,12 @@ transfer function.
 We know our initial conditions for $\dot{y}$ and $\ddot{y}$ are $0$
 because the HDD head is not in motion.
 
+$$\dot{y}(0) = \ddot{y}(0) = 0$$
 \begin{align*}
-  \dot{y}(0) &= 0 \\
-  \ddot{y}(0) &= 0 \\
   \mathcal{L}\left\{ J\ddot{y} + b \dot{y}\right\} &= \mathcal{L}\left\{u(t)\right\} \\
-  Js^2 Y(s) + bsY(s) &= U(s) \\
-  G_2 &= \frac{Y(s)}{U(s)} = \frac{\frac{1}{b}}{s(\frac{J}{b}s + 1)} \\
+  Js^2 Y(s) + bsY(s) &= U(s)
 \end{align*}
+$$G_2 = \frac{Y(s)}{U(s)} = \frac{\frac{1}{b}}{s(\frac{J}{b}s + 1)}$$
 
 Calculating the Laplace Transform of the torque to position
 relationship was relatively easy as shown above. We used differential
@@ -106,7 +105,8 @@ function is shown below:
 
 The second part of this task asked us to take the unit step response
 of the open-loop transfer function we just derived. The project
-specification mentioned to use the values from the table below:
+specification mentioned to use the values from the included table.  It
+is copied below:
 
 \begin{table}[H]
   \begin{center}
@@ -141,9 +141,12 @@ And our Octave code and plot of the impulse response is shown below:
 
 In conclusion we were able to derive and expression for the open-loop
 transfer function by cascading the head reader position model and the
-motor coil transfer function together. We then observed, using Octave,
-the step response on our new transfer function using the provided
-model parameters.
+motor coil transfer function together.  The step response makes sense
+because in $G_1$ the input signal is converted into torque.  If
+constant torque is applied to an object, it will increase speed to a
+point where friction forces (constant factor for $\dot{y}$) become
+equal to torque forces, and the speed becomes constant.  In the step
+response, the speed is constant since the eventual slope is linear.
 
 \subsection*{Task 3: Proportional Compensator}
 
